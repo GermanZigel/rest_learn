@@ -66,8 +66,6 @@ func Setter() *User {
 	myUser.Comment = "User created sucess"
 	return myUser
 
-	return myUser
-
 }
 
 /*
