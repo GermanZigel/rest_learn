@@ -2,9 +2,9 @@ package user
 
 import (
 	"encoding/json"
-	"log"
 	"net/http"
 	Handlers "rest/internal"
+	"rest/internal/logging"
 	"rest/internal/userProxy"
 
 	"github.com/julienschmidt/httprouter"
@@ -18,10 +18,13 @@ const (
 )
 
 type Handler struct {
+	logger logging.Logger
 }
 
 func NewHandler() Handlers.Handler {
-	return &Handler{}
+	return &Handler{
+		logger: logging.GetLogger(),
+	}
 }
 
 func (h *Handler) Register(router *httprouter.Router) {
@@ -34,11 +37,13 @@ func (h *Handler) Register(router *httprouter.Router) {
 }
 
 func (h *Handler) GetList(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	logger := logging.GetLogger()
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
 	CreatedUser := userProxy.Setter()
-	log.Println("Получена структура созданого User с параметрами:", *CreatedUser)
-	response, err := json.Marshal(CreatedUser)
+
+	logger.Info("Получена структура созданного User с параметрами:", *CreatedUser)
+	response, _ := json.Marshal(CreatedUser)
 	if err != nil {
 		panic(err)
 	}
@@ -54,9 +59,11 @@ func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request, params http
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(201)
 	CreatedUser := userProxy.Setter()
-	log.Println("Получена структура созданого User с параметрами:", *CreatedUser)
+	h.logger.Info("Получена структура созданного User с параметрами:", *CreatedUser)
 	response, _ := json.Marshal(CreatedUser)
 	w.Write(response)
+	h.logger.Infof("Вернули ответ:%s", string(response))
+
 }
 func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
 	w.WriteHeader(200)

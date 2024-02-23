@@ -4,6 +4,7 @@ import (
 	"log"
 	"net"
 	"net/http"
+	"rest/internal/logging"
 	"rest/internal/user"
 	"time"
 
@@ -11,15 +12,17 @@ import (
 )
 
 func main() {
-	log.Println("Create router")
+	logger := logging.GetLogger()
+	logger.Info("Create router")
 	router := httprouter.New()
 	handler := user.NewHandler()
 	handler.Register(router)
-	start(router)
+	start(router, logger)
 
 }
-func start(router *httprouter.Router) {
-	log.Println("Start app")
+
+func start(router *httprouter.Router, logger logging.Logger) {
+	logger.Info("Start app")
 	listenener, err := net.Listen("tcp", ":80")
 	if err != nil {
 		panic(err)
