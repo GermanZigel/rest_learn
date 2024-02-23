@@ -20,7 +20,7 @@ func main() {
 }
 func start(router *httprouter.Router) {
 	log.Println("Start app")
-	listenener, err := net.Listen("tcp", ":1236")
+	listenener, err := net.Listen("tcp", ":80")
 	if err != nil {
 		panic(err)
 	}
