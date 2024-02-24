@@ -43,7 +43,7 @@ func (h *Handler) GetList(w http.ResponseWriter, r *http.Request, params httprou
 	CreatedUser := userProxy.Setter()
 
 	logger.Info("Получена структура созданного User с параметрами:", *CreatedUser)
-	response, _ := json.Marshal(CreatedUser)
+	response, err := json.Marshal(CreatedUser)
 	if err != nil {
 		panic(err)
 	}

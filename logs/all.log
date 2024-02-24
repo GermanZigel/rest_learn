@@ -29,3 +29,19 @@ time="2024-02-23T17:52:11+03:00" level=info msg="Create router" func="main.go:16
 time="2024-02-23T17:52:11+03:00" level=info msg="Start app" func="main.go:24" file="main.go:24"
 time="2024-02-23T17:52:15+03:00" level=info msg="Получена структура созданного User с параметрами:{Ht Worker 2024-02-23T14:52:15.179Z 805 User created sucess}" func="UserHandler.go:58" file="UserHandler.go:58"
 time="2024-02-23T17:52:15+03:00" level=info msg="Вернули ответ:{\"name\":\"Ht\",\"job\":\"Worker\",\"Created\":\"2024-02-23T14:52:15.179Z\",\"Id\":\"805\",\"Comment\":\"User created sucess\"}" func="UserHandler.go:61" file="UserHandler.go:61"
+time="2024-02-24T15:45:04+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-02-24T15:45:04+03:00" level=info msg="Start app" func="main.go:25" file="main.go:25"
+2024/02/24 15:45:17 Создан пользователь с ID = 900
+2024/02/24 15:45:17 начало проверки пользователя с ID = 900
+time="2024-02-24T15:45:17+03:00" level=info msg="Получена структура созданного User с параметрами:{Ht Worker 2024-02-24T12:45:17.661Z 900 User created sucess}" func="UserHandler.go:62" file="UserHandler.go:62"
+time="2024-02-24T15:45:17+03:00" level=info msg="Вернули ответ:{\"name\":\"Ht\",\"job\":\"Worker\",\"Created\":\"2024-02-24T12:45:17.661Z\",\"Id\":900,\"Comment\":\"User created sucess\"}" func="UserHandler.go:65" file="UserHandler.go:65"
+2024/02/24 15:45:27 Создан пользователь с ID = 507
+2024/02/24 15:45:27 начало проверки пользователя с ID = 507
+2024/02/24 15:45:27 &{   0 User created success}
+2024/02/24 15:45:28 &{Ht Worker 2024-02-24T12:45:28.077Z 618 User created success}
+2024/02/24 15:45:28 &{Ht Worker 2024-02-24T12:45:28.204Z 760 User created success}
+2024/02/24 15:45:28 &{Ht Worker 2024-02-24T12:45:28.320Z 583 User created success}
+2024/02/24 15:45:28 &{Ht Worker 2024-02-24T12:45:28.435Z 664 User created success}
+2024/02/24 15:45:28 &{Ht Worker 2024-02-24T12:45:28.550Z 947 User created success}
+time="2024-02-24T15:45:28+03:00" level=info msg="Получена структура созданного User с параметрами:{Ht Worker 2024-02-24T12:45:28.550Z 947 User created success}" func="UserHandler.go:62" file="UserHandler.go:62"
+time="2024-02-24T15:45:28+03:00" level=info msg="Вернули ответ:{\"name\":\"Ht\",\"job\":\"Worker\",\"Created\":\"2024-02-24T12:45:28.550Z\",\"Id\":947,\"Comment\":\"User created success\"}" func="UserHandler.go:65" file="UserHandler.go:65"
