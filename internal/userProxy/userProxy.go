@@ -67,7 +67,7 @@ func Setter() *User {
 	myUser.Created = gjson.Get(string(body), "createdAt").Str
 	myUser.Comment = "User created sucess"
 	log.Println("начало проверки пользователя с ID =", myUser.Id)
-	for i := myUser.Id; i < 999; i++ {
+	for myUser.Id < 900 {
 		res, err := client.Do(req)
 		if err != nil {
 			panic(err)
@@ -80,8 +80,16 @@ func Setter() *User {
 		myUser.Name = gjson.Get(string(body), "name").Str
 		myUser.Job = gjson.Get(string(body), "job").Str
 		myUser.Created = gjson.Get(string(body), "createdAt").Str
-		myUser.Comment = "User created sucess"
+		myUser.Comment = "User created success"
 		log.Println(myUser)
+
+		// Create a new request for the next iteration
+		req, err = http.NewRequest("POST", httpPostUrl, bytes.NewBuffer(js))
+		req.Header.Set("Content-type", "application/json; charset=UTF-8")
+		if err != nil {
+			fmt.Println(err)
+			return nil
+		}
 	}
 
 	return myUser
