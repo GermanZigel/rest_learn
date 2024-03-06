@@ -206,3 +206,36 @@ time="2024-03-06T17:52:03+03:00" level=info msg="Create router" func="main.go:21
 time="2024-03-06T17:52:03+03:00" level=info msg="read application cofigurations" func="config.go:24" file="config.go:24"
 time="2024-03-06T17:52:03+03:00" level=info msg="go to file" func="config.go:26" file="config.go:26"
 time="2024-03-06T17:52:03+03:00" level=info msg="Start app" func="main.go:30" file="main.go:30"
+time="2024-03-06T18:11:31+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-06T18:11:31+03:00" level=info msg="read application configuration" func="config.go:34" file="config.go:34"
+time="2024-03-06T18:11:31+03:00" level=info func="config.go:38" file="config.go:38"
+time="2024-03-06T18:11:31+03:00" level=fatal msg="open config.yml: no such file or directory" func="config.go:39" file="config.go:39"
+time="2024-03-06T18:12:37+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-06T18:12:37+03:00" level=info msg="read application configuration" func="config.go:34" file="config.go:34"
+time="2024-03-06T18:12:37+03:00" level=info msg="Start app" func="main.go:30" file="main.go:30"
+time="2024-03-06T18:12:37+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+2024/03/06 18:12:42 Создан пользователь с ID = 589
+2024/03/06 18:12:42 начало проверки пользователя с ID = 589
+2024/03/06 18:12:42 &{   0 User created success}
+2024/03/06 18:12:42 &{Ht Worker 2024-03-06T15:12:42.780Z 736 User created success}
+2024/03/06 18:12:42 &{Ht Worker 2024-03-06T15:12:42.901Z 690 User created success}
+2024/03/06 18:12:43 &{Ht Worker 2024-03-06T15:12:43.044Z 318 User created success}
+2024/03/06 18:12:43 &{Ht Worker 2024-03-06T15:12:43.181Z 516 User created success}
+2024/03/06 18:12:43 &{Ht Worker 2024-03-06T15:12:43.293Z 692 User created success}
+2024/03/06 18:12:43 &{Ht Worker 2024-03-06T15:12:43.408Z 285 User created success}
+2024/03/06 18:12:43 &{Ht Worker 2024-03-06T15:12:43.521Z 666 User created success}
+2024/03/06 18:12:43 &{Ht Worker 2024-03-06T15:12:43.668Z 143 User created success}
+2024/03/06 18:12:43 &{Ht Worker 2024-03-06T15:12:43.779Z 101 User created success}
+2024/03/06 18:12:43 &{Ht Worker 2024-03-06T15:12:43.894Z 722 User created success}
+2024/03/06 18:12:44 &{Ht Worker 2024-03-06T15:12:44.023Z 530 User created success}
+2024/03/06 18:12:44 &{Ht Worker 2024-03-06T15:12:44.144Z 989 User created success}
+time="2024-03-06T18:12:44+03:00" level=info msg="Получена структура созданного User с параметрами:{Ht Worker 2024-03-06T15:12:44.144Z 989 User created success}" func="UserHandler.go:62" file="UserHandler.go:62"
+time="2024-03-06T18:12:44+03:00" level=info msg="Вернули ответ:{\"name\":\"Ht\",\"job\":\"Worker\",\"Created\":\"2024-03-06T15:12:44.144Z\",\"Id\":989,\"Comment\":\"User created success\"}" func="UserHandler.go:65" file="UserHandler.go:65"
+time="2024-03-06T18:12:57+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-06T18:12:57+03:00" level=info msg="read application configuration" func="config.go:34" file="config.go:34"
+time="2024-03-06T18:12:57+03:00" level=info msg="Start app" func="main.go:30" file="main.go:30"
+time="2024-03-06T18:12:57+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-03-06T18:12:58+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-06T18:12:58+03:00" level=info msg="read application configuration" func="config.go:34" file="config.go:34"
+time="2024-03-06T18:12:58+03:00" level=info msg="Start app" func="main.go:30" file="main.go:30"
+time="2024-03-06T18:12:58+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
