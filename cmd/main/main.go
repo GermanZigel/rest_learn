@@ -23,7 +23,7 @@ func main() {
 	cfg := config.GetConfig()
 	handler := user.NewHandler()
 	handler.Register(router)
-	start(router, logger, &cfg)
+	start(router, logger, cfg)
 }
 
 func start(router *httprouter.Router, logger logging.Logger, cfg *config.Config) {
