@@ -1,4 +1,6 @@
 is_debug: true 
 listen:
   type: port
-  port: 8081
+  port: 9091
+  URI_Once: /user/v3
+  URI_List: /users/v3
