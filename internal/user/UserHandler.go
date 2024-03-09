@@ -13,11 +13,6 @@ import (
 
 var _ Handlers.Handler = &Handler{}
 
-const (
-	usersUrl = "/users/v2"
-	userUrl  = "/user/v2/:uuid"
-)
-
 type Handler struct {
 	logger logging.Logger
 }
