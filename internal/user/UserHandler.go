@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	Handlers "rest/internal"
+	"rest/internal/config"
 	"rest/internal/logging"
 	"rest/internal/userProxy"
 
@@ -28,11 +29,22 @@ func NewHandler() Handlers.Handler {
 }
 
 func (h *Handler) Register(router *httprouter.Router) {
-	router.GET(usersUrl, h.GetList)
-	router.GET(userUrl, h.GetUserByUid)
-	router.POST(usersUrl, h.CreateUser)
-	router.PUT(userUrl, h.UpdateUser)
-	router.DELETE(userUrl, h.DeleteUser)
+	cfg := config.GetConfig()
+	router.GET(cfg.Listen.URI_List, h.GetList)
+	router.GET(cfg.Listen.URI_Once, h.GetUserByUid)
+	router.POST(cfg.Listen.URI_Once, h.CreateUser)
+	router.PUT(cfg.Listen.URI_Once, h.UpdateUser)
+	router.DELETE(cfg.Listen.URI_Once, h.DeleteUser)
+
+}
+func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(201)
+	CreatedUser := userProxy.Setter()
+	h.logger.Info("Получена структура созданного User с параметрами:", *CreatedUser)
+	response, _ := json.Marshal(CreatedUser)
+	w.Write(response)
+	h.logger.Infof("Вернули ответ:%s", string(response))
 
 }
 
@@ -55,16 +67,7 @@ func (h *Handler) GetUserByUid(w http.ResponseWriter, r *http.Request, params ht
 	w.Write([]byte("This is  users"))
 
 }
-func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(201)
-	CreatedUser := userProxy.Setter()
-	h.logger.Info("Получена структура созданного User с параметрами:", *CreatedUser)
-	response, _ := json.Marshal(CreatedUser)
-	w.Write(response)
-	h.logger.Infof("Вернули ответ:%s", string(response))
 
-}
 func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
 	w.WriteHeader(200)
 	w.Write([]byte("This is updated of user"))
