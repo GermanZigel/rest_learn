@@ -239,3 +239,45 @@ time="2024-03-06T18:12:58+03:00" level=info msg="Create router" func="main.go:21
 time="2024-03-06T18:12:58+03:00" level=info msg="read application configuration" func="config.go:34" file="config.go:34"
 time="2024-03-06T18:12:58+03:00" level=info msg="Start app" func="main.go:30" file="main.go:30"
 time="2024-03-06T18:12:58+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-03-06T18:24:26+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-06T18:24:26+03:00" level=info msg="read application configuration" func="config.go:34" file="config.go:34"
+time="2024-03-06T18:24:26+03:00" level=info msg="Start app" func="main.go:30" file="main.go:30"
+time="2024-03-06T18:24:26+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-03-06T18:24:44+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-06T18:24:44+03:00" level=info msg="read application configuration" func="config.go:34" file="config.go:34"
+time="2024-03-06T18:24:44+03:00" level=info msg="Start app" func="main.go:30" file="main.go:30"
+time="2024-03-06T18:24:44+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-03-09T12:04:14+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-09T12:04:14+03:00" level=info msg="read application configuration" func="config.go:35" file="config.go:35"
+time="2024-03-09T12:04:38+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-09T12:04:38+03:00" level=info msg="read application configuration" func="config.go:35" file="config.go:35"
+time="2024-03-09T12:05:47+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-09T12:05:47+03:00" level=info msg="read application configuration" func="config.go:35" file="config.go:35"
+time="2024-03-09T12:08:23+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-09T12:08:23+03:00" level=info msg="read application configuration" func="config.go:35" file="config.go:35"
+time="2024-03-09T12:08:23+03:00" level=info msg="Start app" func="main.go:30" file="main.go:30"
+time="2024-03-09T12:08:23+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+2024/03/09 12:08:50 Создан пользователь с ID = 926
+2024/03/09 12:08:50 начало проверки пользователя с ID = 926
+time="2024-03-09T12:08:50+03:00" level=info msg="Получена структура созданного User с параметрами:{Ht Worker 2024-03-09T09:08:50.974Z 926 User created sucess}" func="UserHandler.go:44" file="UserHandler.go:44"
+time="2024-03-09T12:08:50+03:00" level=info msg="Вернули ответ:{\"name\":\"Ht\",\"job\":\"Worker\",\"Created\":\"2024-03-09T09:08:50.974Z\",\"Id\":926,\"Comment\":\"User created sucess\"}" func="UserHandler.go:47" file="UserHandler.go:47"
+time="2024-03-09T12:09:13+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-09T12:09:13+03:00" level=info msg="read application configuration" func="config.go:35" file="config.go:35"
+time="2024-03-09T12:09:13+03:00" level=info msg="Start app" func="main.go:30" file="main.go:30"
+time="2024-03-09T12:09:13+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-03-09T12:13:09+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-09T12:13:09+03:00" level=info msg="read application configuration" func="config.go:36" file="config.go:36"
+time="2024-03-09T12:13:09+03:00" level=info msg="Start app" func="main.go:30" file="main.go:30"
+time="2024-03-09T12:13:09+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-03-09T12:19:23+03:00" level=info msg="Create router" func="main.go:21" file="main.go:21"
+time="2024-03-09T12:19:23+03:00" level=info msg="read application configuration" func="config.go:36" file="config.go:36"
+time="2024-03-09T12:19:23+03:00" level=info msg="Start app" func="main.go:30" file="main.go:30"
+time="2024-03-09T12:19:23+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+2024/03/09 12:19:45 Создан пользователь с ID = 380
+2024/03/09 12:19:45 начало проверки пользователя с ID = 380
+2024/03/09 12:19:45 &{   0 User created success}
+2024/03/09 12:19:45 &{Ht Worker 2024-03-09T09:19:45.572Z 398 User created success}
+2024/03/09 12:19:45 &{Ht Worker 2024-03-09T09:19:45.690Z 713 User created success}
+2024/03/09 12:19:45 &{Ht Worker 2024-03-09T09:19:45.803Z 957 User created success}
+time="2024-03-09T12:19:45+03:00" level=info msg="Получена структура созданного User с параметрами:{Ht Worker 2024-03-09T09:19:45.803Z 957 User created success}" func="UserHandler.go:44" file="UserHandler.go:44"
+time="2024-03-09T12:19:45+03:00" level=info msg="Вернули ответ:{\"name\":\"Ht\",\"job\":\"Worker\",\"Created\":\"2024-03-09T09:19:45.803Z\",\"Id\":957,\"Comment\":\"User created success\"}" func="UserHandler.go:47" file="UserHandler.go:47"
