@@ -4,11 +4,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/tidwall/gjson"
 	"io/ioutil"
 	"log"
 	"net/http"
-
-	"github.com/tidwall/gjson"
+	"rest/internal/config"
 )
 
 type User struct {
@@ -67,7 +67,8 @@ func Setter() *User {
 	myUser.Created = gjson.Get(string(body), "createdAt").Str
 	myUser.Comment = "User created sucess"
 	log.Println("начало проверки пользователя с ID =", myUser.Id)
-	for myUser.Id < 900 {
+	cfg := config.GetConfig()
+	for myUser.Id < cfg.Listen.MitId {
 		res, err := client.Do(req)
 		if err != nil {
 			panic(err)
@@ -94,8 +95,3 @@ func Setter() *User {
 
 	return myUser
 }
-
-/*
-{"name":"Ht","job":"Worker","id":"102","createdAt":"2024-02-17T15:59:13.369Z"}
-
-*/

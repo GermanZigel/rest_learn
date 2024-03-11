@@ -15,6 +15,7 @@ type Config struct {
 		Port     string `yaml:"port" env-default:"8080"`
 		URI_List string `yaml:"URI_List" env-default:"/"`
 		URI_Once string `yaml:"URI_Once" env-default:"/"`
+		MitId    int    `yaml:"MitId" env-default:"/"`
 	} `yaml:"listen"`
 	Storage StorageConfig `yaml:"storage"`
 }

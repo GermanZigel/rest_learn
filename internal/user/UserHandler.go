@@ -1,12 +1,15 @@
 package user
 
 import (
+	"context"
 	"encoding/json"
 	"net/http"
 	Handlers "rest/internal"
 	"rest/internal/config"
 	"rest/internal/logging"
+	"rest/internal/user/db"
 	"rest/internal/userProxy"
+	"rest/pkg/client/pgclient"
 
 	"github.com/julienschmidt/httprouter"
 )
@@ -33,9 +36,16 @@ func (h *Handler) Register(router *httprouter.Router) {
 
 }
 func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	logger := logging.GetLogger()
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(201)
 	CreatedUser := userProxy.Setter()
+	cfg := config.GetConfig()
+	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
+	if err != nil {
+		logger.Fatalf("%v", err)
+	}
+	Repository := db.NewRepository(pgsClient, logger)
 	h.logger.Info("Получена структура созданного User с параметрами:", *CreatedUser)
 	response, _ := json.Marshal(CreatedUser)
 	w.Write(response)
@@ -48,7 +58,6 @@ func (h *Handler) GetList(w http.ResponseWriter, r *http.Request, params httprou
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
 	CreatedUser := userProxy.Setter()
-
 	logger.Info("Получена структура созданного User с параметрами:", *CreatedUser)
 	response, err := json.Marshal(CreatedUser)
 	if err != nil {
