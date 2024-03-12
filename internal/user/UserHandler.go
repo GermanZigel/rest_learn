@@ -45,14 +45,27 @@ func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request, params http
 	if err != nil {
 		logger.Fatalf("%v", err)
 	}
-	Repository := db.NewRepository(pgsClient, logger)
+
+	poolClient := pgsClient.(*pgclient.PgxPoolClient)
+	pool := poolClient.Pool // Получить подлежащий пул
+
+	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
+
 	h.logger.Info("Получена структура созданного User с параметрами:", *CreatedUser)
 	response, _ := json.Marshal(CreatedUser)
 	w.Write(response)
 	h.logger.Infof("Вернули ответ:%s", string(response))
 
-}
+	// Использование Repository
+	id, err := Repository.Create(context.Background(), *CreatedUser)
+	if err != nil {
+		logger.Errorf("Ошибка при создании пользователя: %v", err)
+		// Обработка ошибки
+		return
+	}
+	logger.Infof("Пользователь успешно создан с ID: %s", id)
 
+}
 func (h *Handler) GetList(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
 	logger := logging.GetLogger()
 	w.Header().Set("Content-Type", "application/json")

@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/jackc/pgx/v4/pgxpool"
 	"rest/internal/logging"
 	"rest/internal/userProxy"
 	"rest/pkg/client/pgclient"
@@ -12,16 +13,17 @@ import (
 )
 
 type repository struct {
-	client pgclient.Client
+	client pgclient.PoolClient
 	logger *logging.Logger
 }
 
-func NewRepository(client pgclient.Client, logger *logging.Logger) *repository {
+func NewRepository(client *pgxpool.Pool, logger *logging.Logger) *repository {
 	return &repository{
 		client: client,
 		logger: logger,
 	}
 }
+
 func (r *repository) Create(ctx context.Context, user userProxy.User) (string, error) {
 	var id string
 	q := "INSERT INTO public.users\n(id, \"Name\", job, created)\nVALUES($1, $2, $3, $4) returning id"
