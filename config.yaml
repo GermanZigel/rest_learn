@@ -4,10 +4,16 @@ listen:
   port: 9091
   URI_Once: /user/v3
   URI_List: /users/v3
-  MitId: 600
+  HOST: https://reqres.in/api/users
 storage:
   host: postgres.it-school.top
   port: 6432
   database: comm_db
   username: comm_app
   password: ZHdhZmFlZWFnCg
+User:
+  Name: Ivan
+  Job: SA
+  MinId: 600
+
+

@@ -25,10 +25,10 @@ func NewRepository(client *pgxpool.Pool, logger *logging.Logger) *repository {
 }
 
 func (r *repository) Create(ctx context.Context, user userProxy.User) (string, error) {
-	var id string
+	var Id string
 	q := "INSERT INTO public.users\n(id, \"Name\", job, created)\nVALUES($1, $2, $3, $4) returning id"
 	row := r.client.QueryRow(ctx, q, user.Id, user.Name, user.Job, user.Created)
-	err := row.Scan(&id)
+	err := row.Scan(&Id)
 	if err != nil {
 		var pgErr *pgconn.PgError
 		if errors.As(err, &pgErr) {
@@ -38,5 +38,5 @@ func (r *repository) Create(ctx context.Context, user userProxy.User) (string, e
 			return "", newErr
 		}
 	}
-	return id, nil
+	return Id, nil
 }

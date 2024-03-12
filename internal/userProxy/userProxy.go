@@ -34,8 +34,10 @@ func (b *User) Set(Name, Job string) {
 }
 
 func Setter() *User {
+	cfg := config.GetConfig()
 	myUser := &User{}
-	myUser.Set("Ht", "Worker")
+	userName, userJob := cfg.User.Name, cfg.User.Job
+	myUser.Set(userName, userJob)
 
 	js, err := jsonStr(myUser)
 	if err != nil {
@@ -43,7 +45,7 @@ func Setter() *User {
 		return nil
 	}
 
-	httpPostUrl := "https://reqres.in/api/users"
+	httpPostUrl := cfg.Listen.HOST
 	req, err := http.NewRequest("POST", httpPostUrl, bytes.NewBuffer(js))
 	req.Header.Set("Content-type", "application/json; charset=UTF-8")
 	if err != nil {
@@ -67,8 +69,7 @@ func Setter() *User {
 	myUser.Created = gjson.Get(string(body), "createdAt").Str
 	myUser.Comment = "User created sucess"
 	log.Println("начало проверки пользователя с ID =", myUser.Id)
-	cfg := config.GetConfig()
-	for myUser.Id < cfg.Listen.MitId {
+	for myUser.Id < cfg.User.MinId {
 		res, err := client.Do(req)
 		if err != nil {
 			panic(err)

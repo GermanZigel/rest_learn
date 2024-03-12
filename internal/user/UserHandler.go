@@ -57,13 +57,15 @@ func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request, params http
 	h.logger.Infof("Вернули ответ:%s", string(response))
 
 	// Использование Repository
-	id, err := Repository.Create(context.Background(), *CreatedUser)
+	//var Id string
+	_, err = Repository.Create(context.Background(), *CreatedUser)
+	logger.Infof("ID=: %d", CreatedUser.Id)
 	if err != nil {
 		logger.Errorf("Ошибка при создании пользователя: %v", err)
 		// Обработка ошибки
 		return
 	}
-	logger.Infof("Пользователь успешно создан с ID: %s", id)
+	logger.Infof("Пользователь успешно создан с ID: %d", CreatedUser.Id)
 
 }
 func (h *Handler) GetList(w http.ResponseWriter, r *http.Request, params httprouter.Params) {

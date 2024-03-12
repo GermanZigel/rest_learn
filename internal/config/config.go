@@ -15,9 +15,10 @@ type Config struct {
 		Port     string `yaml:"port" env-default:"8080"`
 		URI_List string `yaml:"URI_List" env-default:"/"`
 		URI_Once string `yaml:"URI_Once" env-default:"/"`
-		MitId    int    `yaml:"MitId" env-default:"/"`
+		HOST     string `yaml:"HOST" env-default:"/"`
 	} `yaml:"listen"`
 	Storage StorageConfig `yaml:"storage"`
+	User    UserConfig    `yaml:"User"`
 }
 
 type StorageConfig struct {
@@ -26,6 +27,11 @@ type StorageConfig struct {
 	Database string `json:"database"`
 	Username string `json:"username"`
 	Password string `json:"password"`
+}
+type UserConfig struct {
+	Name  string `yaml:"Name" env-default:"/"`
+	Job   string `yaml:"Job" env-default:"/"`
+	MinId int    `yaml:"MinId" env-default:"/"`
 }
 
 var instance *Config
