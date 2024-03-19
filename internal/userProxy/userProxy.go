@@ -12,10 +12,10 @@ import (
 )
 
 type User struct {
+	Id      int    `json:"Id"`
 	Name    string `json:"name"`
 	Job     string `json:"job"`
 	Created string `json:"Created"`
-	Id      int    `json:"Id"`
 	Comment string `json:"Comment"`
 }
 

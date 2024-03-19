@@ -70,13 +70,31 @@ func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request, params http
 }
 func (h *Handler) GetList(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
 	logger := logging.GetLogger()
+	cfg := config.GetConfig()
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
-	CreatedUser := userProxy.Setter()
-	logger.Info("Получена структура созданного User с параметрами:", *CreatedUser)
-	response, err := json.Marshal(CreatedUser)
+	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
 	if err != nil {
-		panic(err)
+		logger.Fatalf("%v", err)
+	}
+	poolClient := pgsClient.(*pgclient.PgxPoolClient)
+	pool := poolClient.Pool                       // Получить подлежащий пул
+	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
+
+	// Использование Repository
+	ListOfUsers, err := Repository.GetList(context.Background())
+	if err != nil {
+		logger.Errorf("Ошибка при получении списка пользователей: %v", err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	logger.Infof("Список пользователей получен: %v", ListOfUsers)
+
+	response, err := json.Marshal(ListOfUsers)
+	if err != nil {
+		logger.Errorf("Ошибка при маршалинге списка пользователей в JSON: %v", err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
 	}
 	w.Write(response)
 }

@@ -4,12 +4,11 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/jackc/pgconn"
 	"github.com/jackc/pgx/v4/pgxpool"
 	"rest/internal/logging"
 	"rest/internal/userProxy"
 	"rest/pkg/client/pgclient"
-
-	"github.com/jackc/pgconn"
 )
 
 type repository struct {
@@ -39,4 +38,30 @@ func (r *repository) Create(ctx context.Context, user userProxy.User) (string, e
 		}
 	}
 	return Id, nil
+}
+func (r *repository) GetList(ctx context.Context) ([]userProxy.User, error) {
+	logger := logging.GetLogger()
+	q := "select id, users.\"Name\", job, created from users order by created desc"
+
+	rows, err := r.client.Query(ctx, q)
+	logger.Info("result query", &rows)
+	if err != nil {
+		return nil, err
+	}
+	users := make([]userProxy.User, 0)
+	for rows.Next() {
+		var usr userProxy.User
+		err = rows.Scan(&usr.Id, &usr.Name, &usr.Job, &usr.Created)
+		if err != nil {
+			return nil, err
+		}
+		users = append(users, usr)
+	}
+	if err = rows.Err(); err != nil {
+		return nil, err
+		logger.Infof("Error after append %s", err)
+
+	}
+	logger.Infof("User recieving from database %s", users)
+	return users, nil
 }
