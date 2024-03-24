@@ -9,14 +9,15 @@ import (
 	"log"
 	"net/http"
 	"rest/internal/config"
+	"time"
 )
 
 type User struct {
-	Id      int    `json:"Id"`
-	Name    string `json:"name"`
-	Job     string `json:"job"`
-	Created string `json:"Created"`
-	Comment string `json:"Comment"`
+	Id      int       `json:"Id"`
+	Name    string    `json:"name"`
+	Job     string    `json:"job"`
+	Created time.Time `json:"Created"`
+	Comment string    `json:"Comment"`
 }
 
 func jsonStr(m *User) ([]byte, error) {
@@ -66,7 +67,9 @@ func Setter() *User {
 	log.Println("Создан пользователь с ID =", myUser.Id)
 	myUser.Name = gjson.Get(string(body), "name").Str
 	myUser.Job = gjson.Get(string(body), "job").Str
-	myUser.Created = gjson.Get(string(body), "createdAt").Str
+	createdAtStr := gjson.Get(string(body), "createdAt").Str
+	createdAtTime, err := time.Parse(time.RFC3339, createdAtStr)
+	myUser.Created = createdAtTime
 	myUser.Comment = "User created sucess"
 	log.Println("начало проверки пользователя с ID =", myUser.Id)
 	for myUser.Id < cfg.User.MinId {
@@ -81,7 +84,9 @@ func Setter() *User {
 		myUser.Id = int(gjson.Get(string(body), "id").Int())
 		myUser.Name = gjson.Get(string(body), "name").Str
 		myUser.Job = gjson.Get(string(body), "job").Str
-		myUser.Created = gjson.Get(string(body), "createdAt").Str
+		createdAtStr := gjson.Get(string(body), "createdAt").Str
+		createdAtTime, err := time.Parse(time.RFC3339, createdAtStr)
+		myUser.Created = createdAtTime
 		myUser.Comment = "User created success"
 		log.Println(myUser)
 
