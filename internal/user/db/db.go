@@ -41,7 +41,7 @@ func (r *repository) Create(ctx context.Context, user userProxy.User) (string, e
 }
 func (r *repository) GetList(ctx context.Context) ([]userProxy.User, error) {
 	logger := logging.GetLogger()
-	q := "select id, users.\"Name\", job, cast (created as varchar)  from users order by created desc"
+	q := "select id, users.\"Name\", job, created from users order by created desc"
 
 	rows, err := r.client.Query(ctx, q)
 	logger.Info("result query", &rows)
