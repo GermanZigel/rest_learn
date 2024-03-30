@@ -72,7 +72,7 @@ func (h *Handler) GetList(w http.ResponseWriter, r *http.Request, params httprou
 	logger := logging.GetLogger()
 	cfg := config.GetConfig()
 	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(200)
+
 	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
 	if err != nil {
 		logger.Fatalf("%v", err)
@@ -97,6 +97,11 @@ func (h *Handler) GetList(w http.ResponseWriter, r *http.Request, params httprou
 		return
 	}
 	w.Write(response)
+	if err != nil {
+		w.WriteHeader(200)
+	} else {
+		w.WriteHeader(500)
+	}
 }
 
 func (h *Handler) GetUserByUid(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
