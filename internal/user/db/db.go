@@ -9,6 +9,7 @@ import (
 	"rest/internal/logging"
 	"rest/internal/userProxy"
 	"rest/pkg/client/pgclient"
+	"strings"
 )
 
 type repository struct {
@@ -64,4 +65,37 @@ func (r *repository) GetList(ctx context.Context) ([]userProxy.User, error) {
 	}
 	logger.Infof("User recieving from database %s", users)
 	return users, nil
+}
+func (r *repository) GetOnce(ctx context.Context, id int) (userProxy.User, error) {
+	logger := logging.GetLogger()
+	q := "select id, users.\"Name\", job, cast (created as varchar)  from users where id in ($1)"
+	logger.Infof(fmt.Sprintf("SQL Query: %s, id=%s", formatQuery(q), id))
+
+	var usr userProxy.User
+	err := r.client.QueryRow(ctx, q, id).Scan(&usr.Id, &usr.Name, &usr.Job, &usr.Created) // Исправлено
+	if err != nil {
+		return userProxy.User{}, err
+	}
+
+	return usr, nil
+}
+func (r *repository) Update(ctx context.Context, u userProxy.User) (int, error) {
+	var Id int
+	q := "update users set  \"Name\" = $2, job= $3 where id = $1  returning id"
+	row := r.client.QueryRow(ctx, q, u.Id, u.Name, u.Job)
+	err := row.Scan(&Id)
+	if err != nil {
+		var pgErr *pgconn.PgError
+		if errors.As(err, &pgErr) {
+			pgErr = err.(*pgconn.PgError)
+			newErr := fmt.Errorf("SQL Error: %s, Detail: %s, Where: %s, Code: %s, SQLState: %s", pgErr.Message, pgErr.Detail, pgErr.Where, pgErr.Code, pgErr.SQLState())
+			r.logger.Error(newErr)
+			return 1, newErr
+		}
+	}
+	return Id, nil
+}
+
+func formatQuery(q string) string {
+	return strings.ReplaceAll(strings.ReplaceAll(q, "\t", ""), "\n", " ")
 }

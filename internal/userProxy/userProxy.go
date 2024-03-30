@@ -16,7 +16,7 @@ type User struct {
 	Name    string `json:"name"`
 	Job     string `json:"job"`
 	Created string `json:"Created"`
-	Comment string `json:"Comment"`
+	Comment string `json:"Comment,omitempty"`
 }
 
 func jsonStr(m *User) ([]byte, error) {

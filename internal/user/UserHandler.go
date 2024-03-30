@@ -3,6 +3,8 @@ package user
 import (
 	"context"
 	"encoding/json"
+	"fmt"
+	"io/ioutil"
 	"net/http"
 	Handlers "rest/internal"
 	"rest/internal/config"
@@ -10,6 +12,7 @@ import (
 	"rest/internal/user/db"
 	"rest/internal/userProxy"
 	"rest/pkg/client/pgclient"
+	"strconv"
 
 	"github.com/julienschmidt/httprouter"
 )
@@ -96,18 +99,82 @@ func (h *Handler) GetList(w http.ResponseWriter, r *http.Request, params httprou
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
+
 	w.Write(response)
 }
 
 func (h *Handler) GetUserByUid(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	cfg := config.GetConfig()
+	logger := logging.GetLogger()
+	logger.Infof("Query params http in:%s", r.URL.Query())
+	SearchIdstr := r.URL.Query().Get("id")
+	SearchId, err := strconv.Atoi(SearchIdstr)
+	if err != nil {
+		// Обработка ошибки, если строка не является числом
+		fmt.Println("Ошибка:", err)
+		// Вероятно, вам также нужно отправить ошибку клиенту HTTP
+		http.Error(w, "Invalid ID", http.StatusBadRequest)
+		return
+	}
+	logger.Infof("Query params pars:%s", SearchId)
+
+	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
+	if err != nil {
+		logger.Fatalf("%v", err)
+	}
+	poolClient := pgsClient.(*pgclient.PgxPoolClient)
+	pool := poolClient.Pool                       // Получить подлежащий пул
+	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
+	FOundUsers, err := Repository.GetOnce(context.Background(), SearchId)
+	if err != nil {
+		logger.Errorf("Ошибка при получении списка пользователей: %v", err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	logger.Infof("Found user %s", FOundUsers)
+	response, err := json.Marshal(FOundUsers)
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
-	w.Write([]byte("This is  users"))
+	w.Write(response)
+	return
 
 }
 
 func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	cfg := config.GetConfig()
+	logger := logging.GetLogger()
+	buf, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		// обработка ошибки чтения тела запроса
+		return
+	}
+	var user userProxy.User
+	if err := json.Unmarshal(buf, &user); err != nil {
+		logger.Errorf("Ошибка при разборе JSON: %v", err)
+		http.Error(w, "Bad Request", http.StatusBadRequest)
+		return
+	}
+	logger.Infof("Body http in:%s", user)
+
+	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
+	if err != nil {
+		logger.Fatalf("%v", err)
+	}
+	poolClient := pgsClient.(*pgclient.PgxPoolClient)
+	pool := poolClient.Pool                       // Получить подлежащий пул
+	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
+	UpdatedId, err := Repository.Update(context.Background(), user)
+	if err != nil {
+		logger.Errorf("Ошибка при получении списка пользователей: %v", err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	logger.Infof("Updated User:%d", UpdatedId)
+	response, err := json.Marshal(map[string]int{"id": UpdatedId})
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
-	w.Write([]byte("This is updated of user"))
+	w.Write(response)
+	return
 
 }
 func (h *Handler) DeleteUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
