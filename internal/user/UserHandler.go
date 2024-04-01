@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/sirupsen/logrus"
 	"io/ioutil"
 	"net/http"
 	Handlers "rest/internal"
@@ -154,7 +155,13 @@ func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params http
 		http.Error(w, "Bad Request", http.StatusBadRequest)
 		return
 	}
-	logger.Infof("Body http in:%s", user)
+	logger.WithFields(logrus.Fields{
+		"Id":      user.Id,
+		"Name":    user.Name,
+		"Job":     user.Job,
+		"Created": user.Created,
+		"Comment": user.Comment,
+	}).Info("Updated User")
 
 	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
 	if err != nil {
@@ -163,14 +170,20 @@ func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params http
 	poolClient := pgsClient.(*pgclient.PgxPoolClient)
 	pool := poolClient.Pool                       // Получить подлежащий пул
 	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
-	UpdatedId, err := Repository.Update(context.Background(), user)
+	updatedUser, err := Repository.Update(context.Background(), user)
 	if err != nil {
 		logger.Errorf("Ошибка при получении списка пользователей: %v", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
-	logger.Infof("Updated User:%d", UpdatedId)
-	response, err := json.Marshal(map[string]int{"id": UpdatedId})
+	logger.WithFields(logrus.Fields{
+		"Id":      updatedUser.Id,
+		"Name":    updatedUser.Name,
+		"Job":     updatedUser.Job,
+		"Created": updatedUser.Created,
+		"Comment": updatedUser.Comment,
+	}).Info("Updated User")
+	response, err := json.Marshal(updatedUser)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
 	w.Write(response)

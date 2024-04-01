@@ -79,21 +79,21 @@ func (r *repository) GetOnce(ctx context.Context, id int) (userProxy.User, error
 
 	return usr, nil
 }
-func (r *repository) Update(ctx context.Context, u userProxy.User) (int, error) {
-	var Id int
-	q := "update users set  \"Name\" = $2, job= $3 where id = $1  returning id"
+func (r *repository) Update(ctx context.Context, u userProxy.User) (userProxy.User, error) {
+	var updatedUser userProxy.User
+	q := "update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\""
 	row := r.client.QueryRow(ctx, q, u.Id, u.Name, u.Job)
-	err := row.Scan(&Id)
+	err := row.Scan(&updatedUser.Id, &updatedUser.Job, &updatedUser.Name)
 	if err != nil {
 		var pgErr *pgconn.PgError
 		if errors.As(err, &pgErr) {
 			pgErr = err.(*pgconn.PgError)
 			newErr := fmt.Errorf("SQL Error: %s, Detail: %s, Where: %s, Code: %s, SQLState: %s", pgErr.Message, pgErr.Detail, pgErr.Where, pgErr.Code, pgErr.SQLState())
 			r.logger.Error(newErr)
-			return 1, newErr
+			return updatedUser, newErr
 		}
 	}
-	return Id, nil
+	return updatedUser, nil
 }
 
 func formatQuery(q string) string {

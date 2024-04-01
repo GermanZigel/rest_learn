@@ -15,7 +15,7 @@ type User struct {
 	Id      int    `json:"Id"`
 	Name    string `json:"name"`
 	Job     string `json:"job"`
-	Created string `json:"Created"`
+	Created string `json:"Created,omitempty"`
 	Comment string `json:"Comment,omitempty"`
 }
 
