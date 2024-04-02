@@ -161,7 +161,7 @@ func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params http
 		"Job":     user.Job,
 		"Created": user.Created,
 		"Comment": user.Comment,
-	}).Info("Updated User")
+	}).Info("Recieved User")
 
 	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
 	if err != nil {
@@ -171,24 +171,49 @@ func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params http
 	pool := poolClient.Pool                       // Получить подлежащий пул
 	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
 	updatedUser, err := Repository.Update(context.Background(), user)
+	logger.WithFields(logrus.Fields{
+		"Id": updatedUser.Id,
+	}).Info("User ID= ")
 	if err != nil {
 		logger.Errorf("Ошибка при получении списка пользователей: %v", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
-	}
-	logger.WithFields(logrus.Fields{
-		"Id":      updatedUser.Id,
-		"Name":    updatedUser.Name,
-		"Job":     updatedUser.Job,
-		"Created": updatedUser.Created,
-		"Comment": updatedUser.Comment,
-	}).Info("Updated User")
-	response, err := json.Marshal(updatedUser)
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(200)
-	w.Write(response)
-	return
+	} else if updatedUser.Id == 0 {
+		logger.WithFields(logrus.Fields{
+			"Id": user.Id,
+		}).Info("Не найен пользователь с")
+		http.Error(w, "user not found", http.StatusNotFound)
+		w.Header().Set("Content-Type", "application/json")
+	} else {
+		logger.WithFields(logrus.Fields{
+			"Id":      updatedUser.Id,
+			"Name":    updatedUser.Name,
+			"Job":     updatedUser.Job,
+			"Created": updatedUser.Created,
+			"Comment": updatedUser.Comment,
+		}).Info("Updated User")
+		responseUser := struct {
+			Id      int    `json:"Id"`
+			Name    string `json:"name"`
+			Job     string `json:"job"`
+			Comment string `json:"Comment,omitempty"`
+		}{
+			Id:      updatedUser.Id,
+			Name:    updatedUser.Name,
+			Job:     updatedUser.Job,
+			Comment: updatedUser.Comment,
+		}
 
+		response, err := json.Marshal(responseUser)
+		if err != nil {
+			logger.Errorf("Ошибка при формировании json: %v", err)
+			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(200)
+		w.Write(response)
+	}
 }
 func (h *Handler) DeleteUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
 	w.WriteHeader(204)

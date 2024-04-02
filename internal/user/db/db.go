@@ -42,7 +42,7 @@ func (r *repository) Create(ctx context.Context, user userProxy.User) (string, e
 }
 func (r *repository) GetList(ctx context.Context) ([]userProxy.User, error) {
 	logger := logging.GetLogger()
-	q := "select id, users.\"Name\", job, cast (created as varchar)  from users order by created desc"
+	q := "select id, users.\"Name\", job, created from users order by created desc"
 
 	rows, err := r.client.Query(ctx, q)
 	logger.Info("result query", &rows)
@@ -68,8 +68,8 @@ func (r *repository) GetList(ctx context.Context) ([]userProxy.User, error) {
 }
 func (r *repository) GetOnce(ctx context.Context, id int) (userProxy.User, error) {
 	logger := logging.GetLogger()
-	q := "select id, users.\"Name\", job, cast (created as varchar)  from users where id in ($1)"
-	logger.Infof(fmt.Sprintf("SQL Query: %s, id=%s", formatQuery(q), id))
+	q := "select id, users.\"Name\", job, created  from users where id in ($1)"
+	logger.Infof("SQL Query: %s, id=%s", formatQuery(q), id)
 
 	var usr userProxy.User
 	err := r.client.QueryRow(ctx, q, id).Scan(&usr.Id, &usr.Name, &usr.Job, &usr.Created) // Исправлено
@@ -80,10 +80,13 @@ func (r *repository) GetOnce(ctx context.Context, id int) (userProxy.User, error
 	return usr, nil
 }
 func (r *repository) Update(ctx context.Context, u userProxy.User) (userProxy.User, error) {
+	logger := logging.GetLogger()
 	var updatedUser userProxy.User
 	q := "update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\""
 	row := r.client.QueryRow(ctx, q, u.Id, u.Name, u.Job)
+	logger.Infof("SQL Query: %s, id=%s", formatQuery(q), u)
 	err := row.Scan(&updatedUser.Id, &updatedUser.Job, &updatedUser.Name)
+	logger.Infof("query results", err)
 	if err != nil {
 		var pgErr *pgconn.PgError
 		if errors.As(err, &pgErr) {
