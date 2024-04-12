@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/sirupsen/logrus"
 	"io/ioutil"
+	"log"
 	"net/http"
 	Handlers "rest/internal"
 	"rest/internal/config"
@@ -15,8 +15,29 @@ import (
 	"rest/pkg/client/pgclient"
 	"strconv"
 
+	"github.com/gin-gonic/gin"
+	"github.com/sirupsen/logrus"
+
 	"github.com/julienschmidt/httprouter"
 )
+
+func Start(*gin.Engine, *log.Logger) {
+	logger := logging.GetLogger()
+	logger.Info("Start app")
+	r := gin.New()
+	r.Use(gin.Logger())
+	r.Use(gin.Recovery())
+	apiv1 := r.Group("/api/v1")
+	{
+		cfg := config.GetConfig()
+		router.GET(cfg.Listen.URI_List, h.GetList)
+		router.GET(cfg.Listen.URI_Once, h.GetUserByUid)
+		router.POST(cfg.Listen.URI_Once, h.CreateUser)
+		router.PUT(cfg.Listen.URI_Once, h.UpdateUser)
+		router.DELETE(cfg.Listen.URI_Once, h.DeleteUser)
+	}
+
+}
 
 var _ Handlers.Handler = &Handler{}
 
