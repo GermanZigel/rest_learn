@@ -2,9 +2,9 @@ package user
 
 import (
 	"context"
+	"database/sql"
 	"encoding/json"
 	"fmt"
-	"github.com/sirupsen/logrus"
 	"io/ioutil"
 	"net/http"
 	Handlers "rest/internal"
@@ -14,6 +14,9 @@ import (
 	"rest/internal/userProxy"
 	"rest/pkg/client/pgclient"
 	"strconv"
+
+	"github.com/jackc/pgx/v4"
+	"github.com/sirupsen/logrus"
 
 	"github.com/julienschmidt/httprouter"
 )
@@ -127,18 +130,22 @@ func (h *Handler) GetUserByUid(w http.ResponseWriter, r *http.Request, params ht
 	pool := poolClient.Pool                       // Получить подлежащий пул
 	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
 	FOundUsers, err := Repository.GetOnce(context.Background(), SearchId)
-	if err != nil {
-		logger.Errorf("Ошибка при получении списка пользователей: %v", err)
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+	if err == pgx.ErrNoRows {
+		logger.Errorf("Пользователь не найден: %v", err)
+		http.Error(w, "Not Found", http.StatusNotFound)
+		return
+	} else if err != nil && err != sql.ErrNoRows {
+		logger.Errorf("Ошибка при получении пользователя: %v", err)
+		http.Error(w, "Bad Request", http.StatusBadRequest)
+		return
+	} else {
+		logger.Infof("Found user %s", FOundUsers)
+		response, _ := json.Marshal(FOundUsers)
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(200)
+		w.Write(response)
 		return
 	}
-	logger.Infof("Found user %s", FOundUsers)
-	response, err := json.Marshal(FOundUsers)
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(200)
-	w.Write(response)
-	return
-
 }
 
 func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {

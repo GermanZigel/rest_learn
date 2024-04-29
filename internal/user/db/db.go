@@ -4,12 +4,14 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/jackc/pgconn"
-	"github.com/jackc/pgx/v4/pgxpool"
 	"rest/internal/logging"
 	"rest/internal/userProxy"
 	"rest/pkg/client/pgclient"
 	"strings"
+
+	"github.com/jackc/pgconn"
+	"github.com/jackc/pgx/v4"
+	"github.com/jackc/pgx/v4/pgxpool"
 )
 
 type repository struct {
@@ -69,12 +71,18 @@ func (r *repository) GetList(ctx context.Context) ([]userProxy.User, error) {
 func (r *repository) GetOnce(ctx context.Context, id int) (userProxy.User, error) {
 	logger := logging.GetLogger()
 	q := "select id, users.\"Name\", job, created  from users where id in ($1)"
-	logger.Infof("SQL Query: %s, id=%s", formatQuery(q), id)
+	logger.Infof("SQL Query: %s, id=%d", formatQuery(q), id)
 
 	var usr userProxy.User
 	err := r.client.QueryRow(ctx, q, id).Scan(&usr.Id, &usr.Name, &usr.Job, &usr.Created) // Исправлено
 	if err != nil {
-		return userProxy.User{}, err
+		if err == pgx.ErrNoRows {
+			return userProxy.User{}, pgx.ErrNoRows
+			logger.Infof("Ошибка = %s", pgx.ErrNoRows)
+		} else {
+			return userProxy.User{}, err
+		}
+
 	}
 
 	return usr, nil
@@ -84,7 +92,7 @@ func (r *repository) Update(ctx context.Context, u userProxy.User) (userProxy.Us
 	var updatedUser userProxy.User
 	q := "update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\""
 	row := r.client.QueryRow(ctx, q, u.Id, u.Name, u.Job)
-	logger.Infof("SQL Query: %s, id=%s", formatQuery(q), u)
+	logger.Infof("SQL Query: %s, id=%d", formatQuery(q), u.Id)
 	err := row.Scan(&updatedUser.Id, &updatedUser.Job, &updatedUser.Name)
 	logger.Infof("query results", err)
 	if err != nil {
