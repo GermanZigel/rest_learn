@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "rest_learn/pkg/proto";
+
+message GetUserInput {
+  string name = 1;
+}
+
+message User {
+  string name = 1;
+  int32 age = 2;
+}
+
+service UserRPC {
+  rpc GetUser(GetUserInput) returns(User) {}
+}

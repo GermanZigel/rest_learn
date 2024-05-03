@@ -2,14 +2,17 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"github.com/stretchr/testify/assert"
+	"google.golang.org/grpc"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"rest/internal/config"
 	"rest/internal/userProxy"
+	"rest/pkg/proto"
 	"strings"
 	"testing"
 )
@@ -68,4 +71,20 @@ func TestUpdatedUserId(t *testing.T) {
 	assert.Equal(t, usr, us)
 	log.Printf("Updated: %v", us)
 
+}
+
+func TestGrps(t *testing.T) {
+	ctx := context.Background()
+	conn, err := grpc.Dial("localhost:9091", grpc.WithInsecure())
+	if err != nil {
+		t.Fatalf("Failed to dial: %v", err)
+	}
+	defer conn.Close()
+
+	client := proto.NewUserRPCClient(conn)
+	personIn, err := client.GetUser(ctx, &proto.GetUserInput{Name: "addsa"})
+	if err != nil {
+		t.Fatalf("Failed to get user: %v", err)
+	}
+	log.Println(personIn)
 }

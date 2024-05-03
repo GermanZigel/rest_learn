@@ -5,6 +5,8 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 	"io/ioutil"
 	"net/http"
 	Handlers "rest/internal"
@@ -13,6 +15,7 @@ import (
 	"rest/internal/user/db"
 	"rest/internal/userProxy"
 	"rest/pkg/client/pgclient"
+	"rest/pkg/proto"
 	"strconv"
 
 	"github.com/jackc/pgx/v4"
@@ -226,4 +229,11 @@ func (h *Handler) DeleteUser(w http.ResponseWriter, r *http.Request, params http
 	w.WriteHeader(204)
 	w.Write([]byte("This is delete of user"))
 
+}
+
+type UserServiceServer struct {
+}
+
+func (UserServiceServer) GetUser(ctx context.Context, input *proto.GetUserInput) (*proto.User, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPerson not implemented")
 }

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"google.golang.org/grpc"
 	"net"
 	"net/http"
 	"os"
@@ -11,6 +11,7 @@ import (
 	"rest/internal/config"
 	"rest/internal/logging"
 	"rest/internal/user"
+	"rest/pkg/proto"
 	"time"
 
 	"github.com/julienschmidt/httprouter"
@@ -39,6 +40,8 @@ func start(router *httprouter.Router, logger logging.Logger, cfg *config.Config)
 		socketpath := path.Join(appDir, "app.sock")
 		logger.Debugf("socket path: %s", socketpath)
 		logger.Info("create unix socket")
+		server := grpc.NewServer()
+		proto.RegisterUserRPCServer(server, &user.UserServiceServer{})
 		listener, ListenErr = net.Listen("unix", socketpath)
 		if ListenErr != nil {
 			logger.Fatal(ListenErr)
@@ -46,6 +49,8 @@ func start(router *httprouter.Router, logger logging.Logger, cfg *config.Config)
 	} else {
 		logger.Info("listen tcp")
 		listener, ListenErr = net.Listen("tcp", fmt.Sprintf(":%s", cfg.Listen.Port))
+		server := grpc.NewServer()
+		proto.RegisterUserRPCServer(server, &user.UserServiceServer{})
 	}
 
 	if ListenErr != nil {
@@ -60,7 +65,9 @@ func start(router *httprouter.Router, logger logging.Logger, cfg *config.Config)
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
-	server.Serve(listener)
-	log.Println("server is listening port:", listener.Addr())
-	log.Fatal(server.Serve(listener))
+	err := server.Serve(listener)
+	if err != nil {
+		logger.Fatalf("Failed to start the server: %v", err)
+	}
+	logger.Infof("Server is now listening on %s", listener.Addr())
 }
