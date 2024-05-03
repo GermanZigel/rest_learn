@@ -1,0 +1,4 @@
+time="2024-05-03T20:56:13+03:00" level=info msg="Create router" func="main.go:22" file="main.go:22"
+time="2024-05-03T20:56:13+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-03T20:56:13+03:00" level=info msg="Start app" func="main.go:31" file="main.go:31"
+time="2024-05-03T20:56:13+03:00" level=info msg="listen tcp" func="main.go:50" file="main.go:50"

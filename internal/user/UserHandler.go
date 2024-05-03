@@ -234,6 +234,6 @@ func (h *Handler) DeleteUser(w http.ResponseWriter, r *http.Request, params http
 type UserServiceServer struct {
 }
 
-func (UserServiceServer) GetUser(ctx context.Context, input *proto.GetUserInput) (*proto.Users, error) {
+func (UserServiceServer) GetUser(ctx context.Context, input *proto.GetUserInput) (*proto.User, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPerson not implemented")
 }
