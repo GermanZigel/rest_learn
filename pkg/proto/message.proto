@@ -6,11 +6,11 @@ message GetUserInput {
   string name = 1;
 }
 
-message User {
+message Users {
   string name = 1;
   int32 age = 2;
 }
 
 service UserRPC {
-  rpc GetUser(GetUserInput) returns(User) {}
+  rpc GetUser(GetUserInput) returns(Users) {}
 }
