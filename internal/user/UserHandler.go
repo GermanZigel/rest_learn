@@ -5,8 +5,6 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
 	"io/ioutil"
 	"net/http"
 	Handlers "rest/internal"
@@ -235,5 +233,21 @@ type UserServiceServer struct {
 }
 
 func (UserServiceServer) GetUser(ctx context.Context, input *proto.GetUserInput) (*proto.User, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetPerson not implemented")
+	// Создаем новый экземпляр структуры proto.User
+	logger := logging.GetLogger()
+	logger.WithFields(logrus.Fields{
+		"name": input.Name,
+	}).Info("Input req")
+	user := &proto.User{
+		Name: "John", // Установите нужные значения полей
+		Age:  30,
+		// Другие поля
+	}
+	logger.WithFields(logrus.Fields{
+		"name": user.Name,
+		"Age":  user.Age,
+	}).Info("Input req")
+
+	// Возвращаем этот экземпляр и nil ошибки
+	return user, nil
 }

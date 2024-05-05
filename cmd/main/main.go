@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/julienschmidt/httprouter"
 	"google.golang.org/grpc"
 	"net"
-	"net/http"
 	"os"
 	"path"
 	"path/filepath"
@@ -12,9 +12,6 @@ import (
 	"rest/internal/logging"
 	"rest/internal/user"
 	"rest/pkg/proto"
-	"time"
-
-	"github.com/julienschmidt/httprouter"
 )
 
 func main() {
@@ -60,11 +57,12 @@ func start(router *httprouter.Router, logger logging.Logger, cfg *config.Config)
 		logger.Fatal("Listener is nil, cannot start the server")
 	}
 
-	server := &http.Server{
-		Handler:      router,
-		WriteTimeout: 15 * time.Second,
-		ReadTimeout:  15 * time.Second,
-	}
+	//	server := &http.Server{
+	//	Handler:      router,
+	//	WriteTimeout: 15 * time.Second,
+	//	ReadTimeout:  15 * time.Second,
+	//}
+	server := grpc.NewServer()
 	err := server.Serve(listener)
 	if err != nil {
 		logger.Fatalf("Failed to start the server: %v", err)
