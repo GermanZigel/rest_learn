@@ -74,14 +74,17 @@ func TestUpdatedUserId(t *testing.T) {
 }
 
 func TestGrps(t *testing.T) {
+	cfg := config.GetConfig()
+	address := fmt.Sprintf("localhost:%s", cfg.Listen.GrpcPort)
 	ctx := context.Background()
-	conn, err := grpc.Dial("localhost:9091", grpc.WithInsecure())
+	conn, err := grpc.Dial(address, grpc.WithInsecure())
 	if err != nil {
 		t.Fatalf("Failed to dial: %v", err)
 	}
 	defer conn.Close()
 
 	client := proto.NewUserRPCClient(conn)
+
 	personIn, err := client.GetUser(ctx, &proto.GetUserInput{Name: "addsa"})
 	if err != nil {
 		t.Fatalf("Failed to get user: %v", err)

@@ -25,6 +25,7 @@ func main() {
 }
 
 func start(router *httprouter.Router, logger logging.Logger, cfg *config.Config) {
+	address := fmt.Sprintf("localhost:%s", cfg.Listen.GrpcPort)
 	logger.Info("Start app")
 	var listener net.Listener
 	var ListenErr error
@@ -45,7 +46,7 @@ func start(router *httprouter.Router, logger logging.Logger, cfg *config.Config)
 		}
 	} else {
 		logger.Info("listen tcp")
-		listener, ListenErr = net.Listen("tcp", fmt.Sprintf(":%s", cfg.Listen.Port))
+		listener, ListenErr = net.Listen("tcp", address)
 		server := grpc.NewServer()
 		proto.RegisterUserRPCServer(server, &user.UserServiceServer{})
 	}
