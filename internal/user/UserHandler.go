@@ -5,6 +5,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	"google.golang.org/protobuf/types/known/timestamppb"
 	"io/ioutil"
 	"net/http"
 	Handlers "rest/internal"
@@ -235,19 +236,33 @@ type UserServiceServer struct {
 func (UserServiceServer) GetUser(ctx context.Context, input *proto.GetUserInput) (*proto.User, error) {
 	// Создаем новый экземпляр структуры proto.User
 	logger := logging.GetLogger()
+	cfg := config.GetConfig()
 	logger.WithFields(logrus.Fields{
-		"name": input.Name,
+		"Id": input.Id,
 	}).Info("Input req")
-	user := &proto.User{
-		Name: "John", // Установите нужные значения полей
-		Age:  30,
-		// Другие поля
+	var GrpcSearchId int
+	GrpcSearchId = int(input.Id)
+	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
+	if err != nil {
+		logger.Fatalf("%v", err)
 	}
-	logger.WithFields(logrus.Fields{
-		"name": user.Name,
-		"Age":  user.Age,
-	}).Info("Input req")
+	poolClient := pgsClient.(*pgclient.PgxPoolClient)
+	pool := poolClient.Pool                       // Получить подлежащий пул
+	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
+	FOundUsers, err := Repository.GetOnce(context.Background(), GrpcSearchId)
+	GRPCFOundUsers := new(proto.User)
 
-	// Возвращаем этот экземпляр и nil ошибки
-	return user, nil
+	GRPCFOundUsers.Id = int32(FOundUsers.Id)
+	GRPCFOundUsers.Name = FOundUsers.Name
+	GRPCFOundUsers.Job = FOundUsers.Job
+	createdTimestamp := timestamppb.New(FOundUsers.Created)
+	GRPCFOundUsers.Created = createdTimestamp
+
+	logger.WithFields(logrus.Fields{
+		"Id":      GRPCFOundUsers.Id,
+		"Name":    GRPCFOundUsers.Name,
+		"Job":     GRPCFOundUsers.Job,
+		"Created": FOundUsers.Created,
+	}).Info("Found User")
+	return GRPCFOundUsers, nil
 }

@@ -1,16 +1,21 @@
 syntax = "proto3";
+import "google/protobuf/timestamp.proto";
 
 option go_package = "rest_learn/pkg/proto";
 
 message GetUserInput {
   string name = 1;
+  int32 id = 2;
 }
 
 message User {
   string name = 1;
   int32 age = 2;
+  string job = 3;
+  google.protobuf.Timestamp created = 4; // Используйте Timestamp для времени создания
+  int32 id = 5;
 }
 
 service UserRPC {
-  rpc GetUser(GetUserInput) returns(User) {}
+  rpc GetUser(GetUserInput) returns (User) {} // Убедитесь, что возвращаете User, а не user
 }

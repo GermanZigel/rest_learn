@@ -5,13 +5,13 @@ import (
 	"github.com/julienschmidt/httprouter"
 	"google.golang.org/grpc"
 	"net"
-	"os"
-	"path"
-	"path/filepath"
+	"net/http"
 	"rest/internal/config"
 	"rest/internal/logging"
 	"rest/internal/user"
 	"rest/pkg/proto"
+	"sync"
+	"time"
 )
 
 func main() {
@@ -25,48 +25,59 @@ func main() {
 }
 
 func start(router *httprouter.Router, logger logging.Logger, cfg *config.Config) {
-	address := fmt.Sprintf("localhost:%s", cfg.Listen.GrpcPort)
+	addressHTTP := fmt.Sprintf("localhost:%s", cfg.Listen.HttpPort)
+	addressGRPC := fmt.Sprintf("localhost:%s", cfg.Listen.GrpcPort)
+
 	logger.Info("Start app")
-	var listener net.Listener
+	var listenerGrpc net.Listener
+	var listenerHTTP net.Listener
+
 	var ListenErr error
-	if cfg.Listen.Type == "sock" {
-		appDir, err := filepath.Abs(filepath.Dir(os.Args[0]))
-		if err != nil {
-			logger.Fatal(err)
+	var wg sync.WaitGroup
+	wg.Add(2)
+	startHTTP := func() {
+		defer wg.Done()
+		listenerHTTP, ListenErr = net.Listen("tcp", addressHTTP)
+		logger.Info("Start HTTP")
+
+		server := &http.Server{
+			Handler:      router,
+			WriteTimeout: 15 * time.Second,
+			ReadTimeout:  15 * time.Second,
 		}
-		logger.Info("create socket")
-		socketpath := path.Join(appDir, "app.sock")
-		logger.Debugf("socket path: %s", socketpath)
-		logger.Info("create unix socket")
-		server := grpc.NewServer()
-		proto.RegisterUserRPCServer(server, &user.UserServiceServer{})
-		listener, ListenErr = net.Listen("unix", socketpath)
+		logger.Info("Start server")
+		server.Serve(listenerHTTP)
+	}
+	/*
+
+
+	 */
+	go func() {
+		startHTTP()
+	}()
+	startGRPC := func() {
+		defer wg.Done()
+		listenerGrpc, ListenErr = net.Listen("tcp", addressGRPC)
+		logger.Info("Start GRPC")
+
 		if ListenErr != nil {
-			logger.Fatal(ListenErr)
+			panic(ListenErr)
 		}
-	} else {
-		logger.Info("listen tcp")
-		listener, ListenErr = net.Listen("tcp", address)
+		if listenerGrpc == nil {
+			logger.Fatal("Listener is nil, cannot start the server")
+		}
 		server := grpc.NewServer()
 		proto.RegisterUserRPCServer(server, &user.UserServiceServer{})
-	}
+		err := server.Serve(listenerGrpc)
+		if err != nil {
+			logger.Fatalf("Failed to start the server: %v", err)
+		}
+		logger.Infof("Server is now listening on %s", listenerGrpc.Addr())
 
-	if ListenErr != nil {
-		panic(ListenErr)
 	}
-	if listener == nil {
-		logger.Fatal("Listener is nil, cannot start the server")
-	}
+	go func() {
+		startGRPC()
+	}()
+	wg.Wait()
 
-	//	server := &http.Server{
-	//	Handler:      router,
-	//	WriteTimeout: 15 * time.Second,
-	//	ReadTimeout:  15 * time.Second,
-	//}
-	server := grpc.NewServer()
-	err := server.Serve(listener)
-	if err != nil {
-		logger.Fatalf("Failed to start the server: %v", err)
-	}
-	logger.Infof("Server is now listening on %s", listener.Addr())
 }

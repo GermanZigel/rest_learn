@@ -19,7 +19,8 @@ import (
 
 func TestCreatedUserId(t *testing.T) {
 	cfg := config.GetConfig()
-	req, err := http.NewRequest("POST", "http://localhost:9091/user", nil)
+	address := fmt.Sprintf("http://localhost:%s%s", cfg.Listen.HttpPort, cfg.Listen.URI_Once)
+	req, err := http.NewRequest("POST", address, nil)
 	client := &http.Client{}
 	res, err := client.Do(req)
 	if err != nil {
@@ -34,11 +35,12 @@ func TestCreatedUserId(t *testing.T) {
 	bodyString = strings.Replace(bodyString, "\n", "", -1)
 	var us userProxy.User
 	err = json.Unmarshal([]byte(bodyString), &us)
-	assert.GreaterOrEqual(t, cfg.User.MinId, us.Id)
+	assert.GreaterOrEqual(t, us.Id, cfg.User.MinId)
 	log.Printf("Created user: %v", us.Id)
 
 }
 func TestUpdatedUserId(t *testing.T) {
+	cfg := config.GetConfig()
 	type tstUser struct {
 		Id   int    `json:"Id"`
 		Name string `json:"name"`
@@ -50,7 +52,8 @@ func TestUpdatedUserId(t *testing.T) {
 		Job:  "SA",
 	}
 	usrJ, _ := json.Marshal(usr)
-	req, err := http.NewRequest("PUT", fmt.Sprintf("http://localhost:9091/user/v3"), bytes.NewReader(usrJ))
+	address := fmt.Sprintf("http://localhost:%s%s", cfg.Listen.HttpPort, cfg.Listen.URI_Once)
+	req, err := http.NewRequest("PUT", address, bytes.NewReader(usrJ))
 	client := &http.Client{}
 	res, err := client.Do(req)
 	if err != nil {
@@ -85,9 +88,11 @@ func TestGrps(t *testing.T) {
 
 	client := proto.NewUserRPCClient(conn)
 
-	personIn, err := client.GetUser(ctx, &proto.GetUserInput{Name: "addsa"})
+	personIn, err := client.GetUser(ctx, &proto.GetUserInput{Id: 791})
 	if err != nil {
 		t.Fatalf("Failed to get user: %v", err)
 	}
 	log.Println(personIn)
+	assert.Less(t, cfg.User.MinId, int(personIn.Id))
+	assert.Equal(t, cfg.User.Job, personIn.Job)
 }
