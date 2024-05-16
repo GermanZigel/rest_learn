@@ -87,6 +87,20 @@ func (r *repository) GetOnce(ctx context.Context, id int) (userProxy.User, error
 
 	return usr, nil
 }
+
+func (r *repository) DeleteOnce(ctx context.Context, id int) (bool, error) {
+	logger := logging.GetLogger()
+	q := "delete from users where id = $1"
+	logger.Infof("SQL Query: %s, id=%d", formatQuery(q), id)
+
+	_, err := r.client.Exec(ctx, q, id) // Исправлено
+	if err != nil {
+		logger.Infof("Error after append %s", err)
+		return false, err
+	} else {
+		return true, nil
+	}
+}
 func (r *repository) Update(ctx context.Context, u userProxy.User) (userProxy.User, error) {
 	logger := logging.GetLogger()
 	var updatedUser userProxy.User

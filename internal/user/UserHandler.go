@@ -225,9 +225,36 @@ func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params http
 	}
 }
 func (h *Handler) DeleteUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
-	w.WriteHeader(204)
-	w.Write([]byte("This is delete of user"))
+	cfg := config.GetConfig()
+	logger := logging.GetLogger()
+	logger.Infof("Query params http in:%s", r.URL.Query())
+	SearchIdstr := r.URL.Query().Get("id")
+	SearchId, err := strconv.Atoi(SearchIdstr)
+	if err != nil {
+		// Обработка ошибки, если строка не является числом
+		fmt.Println("Ошибка:", err)
+		// Вероятно, вам также нужно отправить ошибку клиенту HTTP
+		http.Error(w, "Invalid ID", http.StatusBadRequest)
 
+	}
+	logger.Infof("Query params pars:%s", SearchId)
+
+	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
+	if err != nil {
+		logger.Fatalf("%v", err)
+	}
+	poolClient := pgsClient.(*pgclient.PgxPoolClient)
+	pool := poolClient.Pool                       // Получить подлежащий пул
+	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
+	delRes, err := Repository.DeleteOnce(context.Background(), SearchId)
+	if err != nil {
+		logger.Fatalf("%v", err)
+	}
+	if delRes == true {
+		w.WriteHeader(204)
+	} else {
+		http.Error(w, "Invalid ID", http.StatusBadRequest)
+	}
 }
 
 type UserServiceServer struct {

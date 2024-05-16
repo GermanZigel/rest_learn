@@ -10,6 +10,7 @@ import (
 	"rest/internal/logging"
 	"rest/internal/user"
 	"rest/pkg/proto"
+	"runtime"
 	"sync"
 	"time"
 )
@@ -17,6 +18,7 @@ import (
 func main() {
 	logger := logging.GetLogger()
 	logger.Info("Create router")
+	logger.Infof("MaxProcs: %d", runtime.GOMAXPROCS(-1))
 	router := httprouter.New()
 	cfg := config.GetConfig()
 	handler := user.NewHandler()
@@ -45,13 +47,8 @@ func start(router *httprouter.Router, logger logging.Logger, cfg *config.Config)
 			WriteTimeout: 15 * time.Second,
 			ReadTimeout:  15 * time.Second,
 		}
-		logger.Info("Start server")
 		server.Serve(listenerHTTP)
 	}
-	/*
-
-
-	 */
 	go func() {
 		startHTTP()
 	}()
