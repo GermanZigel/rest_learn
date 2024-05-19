@@ -2,10 +2,8 @@ package testdata
 
 import (
 	"context"
-	"github.com/julienschmidt/httprouter"
 	"github.com/stretchr/testify/assert"
 	"net/http"
-	"net/http/httptest"
 	"rest/internal/logging"
 	"rest/internal/user"
 	"rest/internal/userProxy"
@@ -41,21 +39,14 @@ func (r *testRepository) Update(ctx context.Context, u userProxy.User) (userProx
 	updatedUser = u
 	return updatedUser, nil
 }
-func TestDelete(t *testing.T) {
+
+func TestDeleteUserLogic(t *testing.T) {
 	storage := &testRepository{}
 	handler := user.NewHandler(storage)
-	router := httprouter.New()
-	handler.Register(router, storage)
-	req, err := http.NewRequest("DELETE", "/user/v3?id=7", nil)
-	assert.NoError(t, err)
 
-	// Создаем ResponseRecorder для получения ответа
-	rr := httptest.NewRecorder()
+	// Вызываем DeleteUserLogic с каким-то id
+	statusCode := handler.(*user.Handler).DeleteUserLogic(1)
 
-	// Выполняем запрос
-	router.ServeHTTP(rr, req)
-
-	// Проверяем статус-код ответа
-	assert.Equal(t, http.StatusNoContent, rr.Code)
-
+	// Проверяем, что полученный код ответа соответствует ожидаемому
+	assert.Equal(t, http.StatusNoContent, statusCode)
 }

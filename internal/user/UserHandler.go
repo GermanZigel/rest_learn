@@ -240,21 +240,28 @@ func (h *Handler) DeleteUser(w http.ResponseWriter, r *http.Request, params http
 
 	}
 	logger.Infof("Query params pars:%s", SearchId)
-
-	if err != nil {
-		logger.Fatalf("%v", err)
+	statusCode := h.DeleteUserLogic(SearchId)
+	if statusCode == http.StatusNoContent {
+		http.Error(w, "User deleted", http.StatusNoContent)
+	} else {
+		http.Error(w, "Invalid ID", http.StatusBadRequest)
 	}
+
+}
+func (h *Handler) DeleteUserLogic(SearchId int) int {
+	logger := logging.GetLogger()
 	ctx := context.Background()                     // Используйте контекст, который вы хотите
 	delRes, err := h.repo.DeleteOnce(ctx, SearchId) // Исправлено: передаем ctx и SearchId
 	if err != nil {
 		logger.Fatalf("%v", err)
 	}
 	if delRes == true {
-		w.WriteHeader(204)
+		return http.StatusNoContent
 	} else {
-		http.Error(w, "Invalid ID", http.StatusBadRequest)
+		return http.StatusBadRequest
 	}
 }
+
 func (h *Handler) DeleteUsers(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
 	w.WriteHeader(204)
 	w.Write([]byte("This is delete of user"))
