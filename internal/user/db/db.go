@@ -15,12 +15,14 @@ import (
 )
 
 type repository struct {
+	ctx    context.Context
 	client pgclient.PoolClient
 	logger *logging.Logger
 }
 
-func NewRepository(client *pgxpool.Pool, logger *logging.Logger) *repository {
+func NewRepository(ctx context.Context, client *pgxpool.Pool, logger *logging.Logger) *repository {
 	return &repository{
+		ctx:    ctx, // Добавление контекста
 		client: client,
 		logger: logger,
 	}
@@ -91,13 +93,28 @@ func (r *repository) GetOnce(ctx context.Context, id int) (userProxy.User, error
 func (r *repository) DeleteOnce(ctx context.Context, id int) (bool, error) {
 	logger := logging.GetLogger()
 	q := "delete from users where id = $1"
-	logger.Infof("SQL Query: %s, id=%d", formatQuery(q), id)
 
-	_, err := r.client.Exec(ctx, q, id) // Исправлено
+	tx, err := r.client.Begin(ctx)
 	if err != nil {
-		logger.Infof("Error after append %s", err)
+		logger.Printf("Failed to begin transaction: %v\n", err)
+		return false, err
+	}
+	logger.Info("Transaction  DeleteOnce begin")
+	logger.Infof("SQL Query: %s, id=%d", formatQuery(q), id)
+	_, err = tx.Exec(ctx, q, id)
+	if err != nil {
+		err = tx.Rollback(ctx)
+		if err != nil {
+			logger.Printf("Transaction rollback failed: %v\n", err)
+			return false, err
+		}
 		return false, err
 	} else {
+		err := tx.Commit(ctx)
+		if err != nil {
+			logger.Printf("Transaction commit failed: %v\n", err)
+		}
+		logger.Info("Transaction  DeleteOnce commit")
 		return true, nil
 	}
 }

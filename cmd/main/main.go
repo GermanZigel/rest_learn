@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"github.com/julienschmidt/httprouter"
 	"google.golang.org/grpc"
@@ -9,6 +10,8 @@ import (
 	"rest/internal/config"
 	"rest/internal/logging"
 	"rest/internal/user"
+	"rest/internal/user/db"
+	"rest/pkg/client/pgclient"
 	"rest/pkg/proto"
 	"runtime"
 	"sync"
@@ -21,8 +24,20 @@ func main() {
 	logger.Infof("MaxProcs: %d", runtime.GOMAXPROCS(-1))
 	router := httprouter.New()
 	cfg := config.GetConfig()
-	handler := user.NewHandler()
-	handler.Register(router)
+	// Создайте подключение к базе данных
+	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
+	if err != nil {
+		logger.Fatalf("Failed to create PG client: %v", err)
+	}
+	poolClient := pgsClient.(*pgclient.PgxPoolClient)
+	pool := poolClient.Pool
+
+	// Создайте экземпляр репозитория
+	repo := db.NewRepository(context.Background(), pool, &logger)
+
+	// Передайте репозиторий в конструктор хендлера
+	handler := user.NewHandler(repo)
+	handler.Register(router, repo)
 	start(router, logger, cfg)
 }
 

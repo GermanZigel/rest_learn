@@ -1,8 +1,8 @@
 is_debug: true 
 listen:
   type: port
-  http_port: 9094
-  grpc_port: 9093
+  http_port: 9095
+  grpc_port: 9096
   URI_Once: /user/v3/
   URI_List: /users/v3
   HOST: https://reqres.in/api/users
