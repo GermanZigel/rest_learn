@@ -12,3 +12,5 @@ type Repository interface {
 	Update(context.Context, userProxy.User) (userProxy.User, error)
 	DeleteOnce(ctx context.Context, id int) (bool, error)
 }
+
+//go:generate mockgen -source=storage.go -destination=/Users/samokat/learn/rest_learn/internal/user/storage/mock/mocks.go

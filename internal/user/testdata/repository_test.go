@@ -2,13 +2,14 @@ package testdata
 
 import (
 	"context"
-	"github.com/stretchr/testify/assert"
 	"net/http"
 	"rest/internal/logging"
 	"rest/internal/user"
 	"rest/internal/userProxy"
 	"strconv"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 type testRepository struct {
@@ -45,7 +46,7 @@ func TestDeleteUserLogic(t *testing.T) {
 	handler := user.NewHandler(storage)
 
 	// Вызываем DeleteUserLogic с каким-то id
-	statusCode := handler.(*user.Handler).DeleteUserLogic(1)
+	statusCode := handler.(*user.Handler).DeleteUserLogic(1, storage)
 
 	// Проверяем, что полученный код ответа соответствует ожидаемому
 	assert.Equal(t, http.StatusNoContent, statusCode)

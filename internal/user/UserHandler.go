@@ -3,7 +3,6 @@ package user
 import (
 	"context"
 	"fmt"
-	"google.golang.org/protobuf/types/known/timestamppb"
 	"net/http"
 	Handlers "rest/internal"
 	"rest/internal/config"
@@ -13,6 +12,8 @@ import (
 	"rest/pkg/client/pgclient"
 	"rest/pkg/proto"
 	"strconv"
+
+	"google.golang.org/protobuf/types/known/timestamppb"
 
 	"github.com/sirupsen/logrus"
 
@@ -239,8 +240,9 @@ func (h *Handler) DeleteUser(w http.ResponseWriter, r *http.Request, params http
 		http.Error(w, "Invalid ID", http.StatusBadRequest)
 
 	}
+	storage := h.repo
 	logger.Infof("Query params pars:%s", SearchId)
-	statusCode := h.DeleteUserLogic(SearchId)
+	statusCode := h.DeleteUserLogic(SearchId, storage)
 	if statusCode == http.StatusNoContent {
 		http.Error(w, "User deleted", http.StatusNoContent)
 	} else {
@@ -248,10 +250,10 @@ func (h *Handler) DeleteUser(w http.ResponseWriter, r *http.Request, params http
 	}
 
 }
-func (h *Handler) DeleteUserLogic(SearchId int) int {
+func (h *Handler) DeleteUserLogic(SearchId int, storage storage.Repository) int {
 	logger := logging.GetLogger()
-	ctx := context.Background()                     // Используйте контекст, который вы хотите
-	delRes, err := h.repo.DeleteOnce(ctx, SearchId) // Исправлено: передаем ctx и SearchId
+	ctx := context.Background()                      // Используйте контекст, который вы хотите
+	delRes, err := storage.DeleteOnce(ctx, SearchId) // Исправлено: передаем ctx и SearchId
 	if err != nil {
 		logger.Fatalf("%v", err)
 	}
