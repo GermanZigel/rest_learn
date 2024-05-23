@@ -2,3 +2,807 @@ time="2024-05-03T20:56:13+03:00" level=info msg="Create router" func="main.go:22
 time="2024-05-03T20:56:13+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
 time="2024-05-03T20:56:13+03:00" level=info msg="Start app" func="main.go:31" file="main.go:31"
 time="2024-05-03T20:56:13+03:00" level=info msg="listen tcp" func="main.go:50" file="main.go:50"
+time="2024-05-03T21:15:55+03:00" level=info msg="Create router" func="main.go:22" file="main.go:22"
+time="2024-05-03T21:15:55+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-03T21:15:55+03:00" level=info msg="Start app" func="main.go:31" file="main.go:31"
+time="2024-05-03T21:15:55+03:00" level=info msg="listen tcp" func="main.go:50" file="main.go:50"
+time="2024-05-03T21:16:36+03:00" level=info msg="Recieved User" func="UserHandler.go:174" file="UserHandler.go:174" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-03T21:16:37+03:00" level=info msg="SQL Query: update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\", id=791" func="db.go:95" file="db.go:95"
+time="2024-05-03T21:16:37+03:00" level=info msg="query results%!(EXTRA <nil>)" func="db.go:97" file="db.go:97"
+time="2024-05-03T21:16:37+03:00" level=info msg="User ID= " func="UserHandler.go:186" file="UserHandler.go:186" Id=791
+time="2024-05-03T21:16:37+03:00" level=info msg="Updated User" func="UserHandler.go:204" file="UserHandler.go:204" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/03 21:16:37 bodyString: {"Id":791,"name":"IvanS","job":"SA"}
+2024/05/03 21:16:37 response={Id:791 Name:IvanS Job:SA}
+2024/05/03 21:16:37 Updated: {791 IvanS SA}
+time="2024-05-03T22:37:38+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-03T22:37:38+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-03T22:37:38+03:00" level=info msg="Start app" func="main.go:28" file="main.go:28"
+time="2024-05-03T22:37:38+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-05-04T10:32:46+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-04T10:32:46+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-04T10:32:46+03:00" level=info msg="Start app" func="main.go:28" file="main.go:28"
+time="2024-05-04T10:32:46+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-05-04T10:33:39+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-04T10:33:39+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-04T10:33:39+03:00" level=info msg="Start app" func="main.go:28" file="main.go:28"
+time="2024-05-04T10:33:39+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-05-05T11:28:00+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-05T11:28:00+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-05T11:28:00+03:00" level=info msg="Start app" func="main.go:28" file="main.go:28"
+time="2024-05-05T11:28:00+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-05-05T11:36:28+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-05T11:36:28+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-05T11:36:28+03:00" level=info msg="Start app" func="main.go:28" file="main.go:28"
+time="2024-05-05T11:36:28+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-05-07T00:19:28+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-07T00:19:28+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-07T00:19:28+03:00" level=info msg="Start app" func="main.go:32" file="main.go:32"
+time="2024-05-07T00:19:28+03:00" level=info msg="Starting HTTP server..." func="main.go:68" file="main.go:68"
+time="2024-05-07T00:19:28+03:00" level=info msg="Starting GRPC server..." func="main.go:39" file="main.go:39"
+time="2024-05-07T00:19:28+03:00" level=info msg="listen tcp" func="main.go:52" file="main.go:52"
+time="2024-05-07T00:20:12+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-07T00:20:12+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-07T00:20:12+03:00" level=info msg="Start app" func="main.go:32" file="main.go:32"
+time="2024-05-07T00:20:12+03:00" level=info msg="Starting HTTP server..." func="main.go:68" file="main.go:68"
+time="2024-05-07T00:20:12+03:00" level=info msg="Starting GRPC server..." func="main.go:39" file="main.go:39"
+time="2024-05-07T00:20:12+03:00" level=info msg="listen tcp" func="main.go:52" file="main.go:52"
+time="2024-05-07T00:22:32+03:00" level=info msg="Create router" func="main.go:24" file="main.go:24"
+time="2024-05-07T00:22:32+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-07T00:22:32+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-07T00:22:32+03:00" level=info msg="Starting HTTP server..." func="main.go:71" file="main.go:71"
+time="2024-05-07T00:22:32+03:00" level=info msg="Starting GRPC server..." func="main.go:42" file="main.go:42"
+time="2024-05-07T00:22:32+03:00" level=info msg="listen tcp" func="main.go:55" file="main.go:55"
+time="2024-05-07T00:22:32+03:00" level=error msg="HTTP server error: listen tcp :9091: bind: address already in use" func="main.go:80" file="main.go:80"
+time="2024-05-07T00:22:50+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-07T00:24:44+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-07T00:25:03+03:00" level=info msg="Create router" func="main.go:24" file="main.go:24"
+time="2024-05-07T00:25:03+03:00" level=info msg="read application configuration" func="config.go:43" file="config.go:43"
+time="2024-05-07T00:25:03+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-07T00:25:03+03:00" level=info msg="Starting HTTP server..." func="main.go:71" file="main.go:71"
+time="2024-05-07T00:25:03+03:00" level=info msg="Starting GRPC server..." func="main.go:42" file="main.go:42"
+time="2024-05-07T00:25:03+03:00" level=info msg="listen tcp" func="main.go:55" file="main.go:55"
+time="2024-05-07T00:25:03+03:00" level=error msg="HTTP server error: listen tcp :9091: bind: address already in use" func="main.go:80" file="main.go:80"
+time="2024-05-07T00:29:42+03:00" level=info msg="Create router" func="main.go:24" file="main.go:24"
+time="2024-05-07T00:29:42+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-07T00:29:42+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-07T00:29:42+03:00" level=info msg="Starting HTTP server..." func="main.go:71" file="main.go:71"
+time="2024-05-07T00:29:42+03:00" level=info msg="Starting GRPC server..." func="main.go:42" file="main.go:42"
+time="2024-05-07T00:29:42+03:00" level=info msg="listen tcp" func="main.go:55" file="main.go:55"
+time="2024-05-07T00:29:46+03:00" level=info msg="Recieved User" func="UserHandler.go:172" file="UserHandler.go:172" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-07T00:29:47+03:00" level=info msg="SQL Query: update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\", id=791" func="db.go:95" file="db.go:95"
+time="2024-05-07T00:29:47+03:00" level=info msg="query results%!(EXTRA <nil>)" func="db.go:97" file="db.go:97"
+time="2024-05-07T00:29:47+03:00" level=info msg="User ID= " func="UserHandler.go:184" file="UserHandler.go:184" Id=791
+time="2024-05-07T00:29:47+03:00" level=info msg="Updated User" func="UserHandler.go:202" file="UserHandler.go:202" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-07T00:29:55+03:00" level=info msg="Recieved User" func="UserHandler.go:172" file="UserHandler.go:172" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-07T00:29:55+03:00" level=info msg="SQL Query: update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\", id=791" func="db.go:95" file="db.go:95"
+time="2024-05-07T00:29:55+03:00" level=info msg="query results%!(EXTRA <nil>)" func="db.go:97" file="db.go:97"
+time="2024-05-07T00:29:55+03:00" level=info msg="User ID= " func="UserHandler.go:184" file="UserHandler.go:184" Id=791
+time="2024-05-07T00:29:55+03:00" level=info msg="Updated User" func="UserHandler.go:202" file="UserHandler.go:202" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/07 00:29:55 bodyString: {"Id":791,"name":"IvanS","job":"SA"}
+2024/05/07 00:29:55 response={Id:791 Name:IvanS Job:SA}
+2024/05/07 00:29:55 Updated: {791 IvanS SA}
+time="2024-05-07T16:03:03+03:00" level=info msg="Recieved User" func="UserHandler.go:172" file="UserHandler.go:172" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-07T16:03:03+03:00" level=info msg="SQL Query: update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\", id=791" func="db.go:95" file="db.go:95"
+time="2024-05-07T16:03:03+03:00" level=info msg="query results%!(EXTRA <nil>)" func="db.go:97" file="db.go:97"
+time="2024-05-07T16:03:03+03:00" level=info msg="User ID= " func="UserHandler.go:184" file="UserHandler.go:184" Id=791
+time="2024-05-07T16:03:03+03:00" level=info msg="Updated User" func="UserHandler.go:202" file="UserHandler.go:202" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-07T18:58:31+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-07T18:58:31+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-07T18:58:31+03:00" level=info msg="Start app" func="main.go:28" file="main.go:28"
+time="2024-05-07T18:58:31+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-05-07T18:59:22+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-07T18:59:22+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-07T18:59:22+03:00" level=info msg="Start app" func="main.go:28" file="main.go:28"
+time="2024-05-07T18:59:22+03:00" level=info msg="listen tcp" func="main.go:47" file="main.go:47"
+time="2024-05-07T19:09:32+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-07T19:10:27+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-07T19:10:35+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-07T19:10:35+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-07T19:10:35+03:00" level=info msg="Start app" func="main.go:29" file="main.go:29"
+time="2024-05-07T19:10:35+03:00" level=info msg="listen tcp" func="main.go:48" file="main.go:48"
+time="2024-05-07T19:11:09+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-07T19:18:11+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T09:52:25+03:00" level=info msg="Create router" func="main.go:15" file="main.go:15"
+time="2024-05-09T09:52:25+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T09:52:25+03:00" level=info msg="Start app" func="main.go:25" file="main.go:25"
+time="2024-05-09T09:52:39+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T09:52:51+03:00" level=info msg="Create router" func="main.go:15" file="main.go:15"
+time="2024-05-09T09:52:51+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T09:52:51+03:00" level=info msg="Start app" func="main.go:25" file="main.go:25"
+time="2024-05-09T09:53:38+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-09T09:53:38+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T09:53:38+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-09T09:53:52+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T09:53:52+03:00" level=info msg="Input req" func="UserHandler.go:240" file="UserHandler.go:240" name=addsa
+time="2024-05-09T09:53:52+03:00" level=info msg="Input req" func="UserHandler.go:249" file="UserHandler.go:249" Age=30 name=John
+2024/05/09 09:53:52 name:"John" age:30
+time="2024-05-09T11:09:27+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T11:10:06+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-09T11:10:06+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T11:10:06+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-09T11:10:12+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T11:10:12+03:00" level=info msg="Input req" func="UserHandler.go:240" file="UserHandler.go:240" name=addsa
+time="2024-05-09T11:10:12+03:00" level=info msg="Input req" func="UserHandler.go:249" file="UserHandler.go:249" Age=30 name=John
+2024/05/09 11:10:12 name:"John"  age:30
+time="2024-05-09T11:40:29+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T11:40:35+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-09T11:40:35+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T11:40:35+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-09T11:40:38+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T11:40:38+03:00" level=info msg="Input req" func="UserHandler.go:240" file="UserHandler.go:240" Id=1
+time="2024-05-09T11:40:38+03:00" level=info msg="Input req" func="UserHandler.go:250" file="UserHandler.go:250" Age=30 name=John
+2024/05/09 11:40:38 name:"John"  age:30  id:1
+time="2024-05-09T11:49:49+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-09T11:49:49+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T11:49:49+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-09T11:49:57+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-09T11:49:57+03:00" level=info msg="Input req" func="UserHandler.go:241" file="UserHandler.go:241" Id=1
+time="2024-05-09T11:49:58+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=1" func="db.go:74" file="db.go:74"
+time="2024-05-11T20:37:48+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-11T20:37:48+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T20:37:48+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-11T20:37:55+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T20:37:55+03:00" level=info msg="Input req" func="UserHandler.go:241" file="UserHandler.go:241" Id=1
+time="2024-05-11T20:37:56+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=1" func="db.go:74" file="db.go:74"
+time="2024-05-11T20:39:18+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-11T20:39:18+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T20:39:18+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-11T20:39:22+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T20:39:22+03:00" level=info msg="Input req" func="UserHandler.go:241" file="UserHandler.go:241" Id=1
+time="2024-05-11T20:39:22+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=1" func="db.go:74" file="db.go:74"
+2024/05/11 20:39:22 
+time="2024-05-11T20:43:21+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-11T20:43:21+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T20:43:21+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-11T20:43:27+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T20:43:27+03:00" level=info msg="Input req" func="UserHandler.go:241" file="UserHandler.go:241" Id=1
+time="2024-05-11T20:43:27+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=1" func="db.go:74" file="db.go:74"
+time="2024-05-11T20:43:27+03:00" level=info msg="Found User" func="UserHandler.go:262" file="UserHandler.go:262" Created="<nil>" Id=0 Job= Name=
+2024/05/11 20:43:27 
+time="2024-05-11T20:44:13+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T20:44:13+03:00" level=info msg="Input req" func="UserHandler.go:241" file="UserHandler.go:241" Id=791
+time="2024-05-11T20:44:13+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T20:44:14+03:00" level=info msg="Found User" func="UserHandler.go:262" file="UserHandler.go:262" Created="<nil>" Id=791 Job=SA Name=IvanS
+2024/05/11 20:44:14 name:"IvanS"  job:"SA"  id:791
+time="2024-05-11T20:52:49+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-11T20:52:49+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T20:52:49+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-11T20:52:49+03:00" level=info msg="Start server" func="main.go:43" file="main.go:43"
+time="2024-05-11T20:53:11+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T20:53:34+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T20:54:01+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/11 20:54:01 Created user: 0
+time="2024-05-11T20:54:11+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/11 20:54:11 Created user: 0
+time="2024-05-11T20:54:49+03:00" level=info msg="Recieved User" func="UserHandler.go:172" file="UserHandler.go:172" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-11T20:54:49+03:00" level=info msg="SQL Query: update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\", id=791" func="db.go:95" file="db.go:95"
+time="2024-05-11T20:54:49+03:00" level=info msg="query results%!(EXTRA <nil>)" func="db.go:97" file="db.go:97"
+time="2024-05-11T20:54:49+03:00" level=info msg="User ID= " func="UserHandler.go:184" file="UserHandler.go:184" Id=791
+time="2024-05-11T20:54:49+03:00" level=info msg="Updated User" func="UserHandler.go:202" file="UserHandler.go:202" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-11T20:56:05+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-11T20:56:05+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T20:56:05+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-11T20:56:05+03:00" level=info msg="Start server" func="main.go:43" file="main.go:43"
+time="2024-05-11T20:56:07+03:00" level=info msg="Recieved User" func="UserHandler.go:172" file="UserHandler.go:172" Comment= Created="<nil>" Id=791 Job=SA Name=IvanS
+time="2024-05-11T20:56:08+03:00" level=info msg="SQL Query: update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\", id=791" func="db.go:95" file="db.go:95"
+time="2024-05-11T20:56:08+03:00" level=info msg="query results%!(EXTRA <nil>)" func="db.go:97" file="db.go:97"
+time="2024-05-11T20:56:08+03:00" level=info msg="User ID= " func="UserHandler.go:184" file="UserHandler.go:184" Id=791
+time="2024-05-11T20:56:08+03:00" level=info msg="Updated User" func="UserHandler.go:202" file="UserHandler.go:202" Comment= Created="<nil>" Id=791 Job=SA Name=IvanS
+2024/05/11 20:56:26 Создан пользователь с ID = 762
+2024/05/11 20:56:26 начало проверки пользователя с ID = 762
+time="2024-05-11T20:56:27+03:00" level=info msg="Получена структура созданного User с параметрами:{762 Ivan SA 2024-05-11 17:56:27.012 +0000 UTC User created sucess}" func="UserHandler.go:62" file="UserHandler.go:62"
+time="2024-05-11T20:56:27+03:00" level=info msg="Вернули ответ:{\"Id\":762,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-11T17:56:27.012Z\",\"Comment\":\"User created sucess\"}" func="UserHandler.go:65" file="UserHandler.go:65"
+time="2024-05-11T20:56:27+03:00" level=info msg="ID=: 762" func="UserHandler.go:70" file="UserHandler.go:70"
+time="2024-05-11T20:56:27+03:00" level=info msg="Пользователь успешно создан с ID: 762" func="UserHandler.go:76" file="UserHandler.go:76"
+2024/05/11 20:56:52 Создан пользователь с ID = 179
+2024/05/11 20:56:52 начало проверки пользователя с ID = 179
+2024/05/11 20:56:52 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/11 20:56:52 &{43 Ivan SA 2024-05-11 17:56:52.575 +0000 UTC User created success}
+2024/05/11 20:56:52 &{794 Ivan SA 2024-05-11 17:56:52.721 +0000 UTC User created success}
+time="2024-05-11T20:56:53+03:00" level=info msg="Получена структура созданного User с параметрами:{794 Ivan SA 2024-05-11 17:56:52.721 +0000 UTC User created success}" func="UserHandler.go:62" file="UserHandler.go:62"
+time="2024-05-11T20:56:53+03:00" level=info msg="Вернули ответ:{\"Id\":794,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-11T17:56:52.721Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:65" file="UserHandler.go:65"
+time="2024-05-11T20:56:53+03:00" level=info msg="ID=: 794" func="UserHandler.go:70" file="UserHandler.go:70"
+time="2024-05-11T20:56:53+03:00" level=info msg="Пользователь успешно создан с ID: 794" func="UserHandler.go:76" file="UserHandler.go:76"
+time="2024-05-11T20:59:43+03:00" level=info msg="Query params http in:map[id:[894]]" func="UserHandler.go:114" file="UserHandler.go:114"
+time="2024-05-11T20:59:43+03:00" level=info msg="Query params pars:%!s(int=894)" func="UserHandler.go:124" file="UserHandler.go:124"
+time="2024-05-11T20:59:44+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=894" func="db.go:74" file="db.go:74"
+time="2024-05-11T20:59:44+03:00" level=error msg="Пользователь не найден: no rows in result set" func="UserHandler.go:135" file="UserHandler.go:135"
+time="2024-05-11T20:59:48+03:00" level=info msg="Query params http in:map[id:[794]]" func="UserHandler.go:114" file="UserHandler.go:114"
+time="2024-05-11T20:59:48+03:00" level=info msg="Query params pars:%!s(int=794)" func="UserHandler.go:124" file="UserHandler.go:124"
+time="2024-05-11T20:59:48+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=794" func="db.go:74" file="db.go:74"
+time="2024-05-11T20:59:49+03:00" level=info msg="Found user {%!s(int=794) Ivan SA 2024-05-11 17:56:52.721 +0000 UTC }" func="UserHandler.go:143" file="UserHandler.go:143"
+time="2024-05-11T21:00:38+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-11T21:00:38+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:00:38+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-11T21:00:53+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:00:53+03:00" level=info msg="Input req" func="UserHandler.go:241" file="UserHandler.go:241" Id=791
+time="2024-05-11T21:00:53+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:00:53+03:00" level=info msg="Found User" func="UserHandler.go:262" file="UserHandler.go:262" Created="<nil>" Id=791 Job=SA Name=IvanS
+2024/05/11 21:00:53 name:"IvanS"  job:"SA"  id:791
+time="2024-05-11T21:01:16+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-11T21:01:16+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:01:16+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-11T21:02:00+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-11T21:02:00+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:02:00+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-11T21:02:00+03:00" level=info msg="Start server" func="main.go:43" file="main.go:43"
+time="2024-05-11T21:02:05+03:00" level=info msg="Query params http in:map[id:[794]]" func="UserHandler.go:114" file="UserHandler.go:114"
+time="2024-05-11T21:02:05+03:00" level=info msg="Query params pars:%!s(int=794)" func="UserHandler.go:124" file="UserHandler.go:124"
+time="2024-05-11T21:02:05+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=794" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:02:06+03:00" level=info msg="Found user {%!s(int=794) Ivan SA 2024-05-11 17:56:52.721 +0000 UTC }" func="UserHandler.go:143" file="UserHandler.go:143"
+time="2024-05-11T21:02:11+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:114" file="UserHandler.go:114"
+time="2024-05-11T21:02:11+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:124" file="UserHandler.go:124"
+time="2024-05-11T21:02:12+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:02:12+03:00" level=info msg="Found user {%!s(int=791) IvanS SA 2024-04-27 17:06:59.66 +0000 UTC }" func="UserHandler.go:143" file="UserHandler.go:143"
+time="2024-05-11T21:03:24+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-11T21:03:24+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:03:24+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-11T21:03:40+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:03:40+03:00" level=info msg="Input req" func="UserHandler.go:241" file="UserHandler.go:241" Id=791
+time="2024-05-11T21:03:41+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:03:41+03:00" level=info msg="Found User" func="UserHandler.go:262" file="UserHandler.go:262" Created="<nil>" Id=791 Job=SA Name=IvanS
+2024/05/11 21:03:41 name:"IvanS"  job:"SA"  id:791
+time="2024-05-11T21:10:07+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-11T21:10:07+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:10:07+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-11T21:10:13+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:10:13+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-11T21:10:13+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:10:14+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="seconds:1714237619 nanos:660000000" Id=791 Job=SA Name=IvanS
+2024/05/11 21:10:14 name:"IvanS"  job:"SA"  created:{seconds:1714237619  nanos:660000000}  id:791
+time="2024-05-11T21:11:24+03:00" level=info msg="Create router" func="main.go:16" file="main.go:16"
+time="2024-05-11T21:11:24+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:11:24+03:00" level=info msg="Start app" func="main.go:26" file="main.go:26"
+time="2024-05-11T21:11:28+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:11:28+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-11T21:11:28+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:11:28+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/11 21:11:28 name:"IvanS"  job:"SA"  created:{seconds:1714237619  nanos:660000000}  id:791
+time="2024-05-11T21:14:14+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:14:14+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-11T21:14:14+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:14:14+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/11 21:14:14 name:"IvanS" job:"SA" created:{seconds:1714237619 nanos:660000000} id:791
+time="2024-05-11T21:15:04+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:15:04+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-11T21:15:04+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:15:04+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/11 21:15:04 name:"IvanS"  job:"SA"  created:{seconds:1714237619  nanos:660000000}  id:791
+time="2024-05-11T21:15:59+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:15:59+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-11T21:16:00+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:16:00+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/11 21:16:00 name:"IvanS" job:"SA" created:{seconds:1714237619 nanos:660000000} id:791
+time="2024-05-11T21:17:16+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:17:16+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-11T21:17:16+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:17:16+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/11 21:17:16 name:"IvanS"  job:"SA"  created:{seconds:1714237619  nanos:660000000}  id:791
+time="2024-05-11T21:17:33+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:17:33+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-11T21:17:33+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:17:33+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/11 21:17:34 name:"IvanS"  job:"SA"  created:{seconds:1714237619  nanos:660000000}  id:791
+time="2024-05-11T21:39:11+03:00" level=info msg="Create router" func="main.go:18" file="main.go:18"
+time="2024-05-11T21:39:11+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:39:11+03:00" level=info msg="Start app" func="main.go:29" file="main.go:29"
+time="2024-05-11T21:40:14+03:00" level=info msg="Create router" func="main.go:18" file="main.go:18"
+time="2024-05-11T21:40:14+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:40:14+03:00" level=info msg="Start app" func="main.go:29" file="main.go:29"
+time="2024-05-11T21:43:16+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-11T21:43:16+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:43:16+03:00" level=info msg="Start app" func="main.go:31" file="main.go:31"
+time="2024-05-11T21:44:07+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-11T21:44:07+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:44:07+03:00" level=info msg="Start app" func="main.go:31" file="main.go:31"
+time="2024-05-11T21:44:07+03:00" level=info msg="Start HTTP" func="main.go:41" file="main.go:41"
+time="2024-05-11T21:44:07+03:00" level=info msg="Start GRPC" func="main.go:61" file="main.go:61"
+time="2024-05-11T21:44:07+03:00" level=fatal msg="Listener is nil, cannot start the server" func="main.go:67" file="main.go:67"
+time="2024-05-11T21:46:02+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-11T21:46:02+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:46:02+03:00" level=info msg="Start app" func="main.go:31" file="main.go:31"
+time="2024-05-11T21:46:02+03:00" level=info msg="Start HTTP" func="main.go:41" file="main.go:41"
+time="2024-05-11T21:46:02+03:00" level=info msg="Start server" func="main.go:48" file="main.go:48"
+time="2024-05-11T21:46:02+03:00" level=info msg="Start GRPC" func="main.go:61" file="main.go:61"
+time="2024-05-11T21:47:19+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:47:19+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-11T21:47:19+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:47:19+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/11 21:47:19 name:"IvanS"  job:"SA"  created:{seconds:1714237619  nanos:660000000}  id:791
+time="2024-05-11T21:51:28+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:52:02+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/11 21:52:03 Создан пользователь с ID = 458
+2024/05/11 21:52:03 начало проверки пользователя с ID = 458
+2024/05/11 21:52:03 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/11 21:52:03 &{216 Ivan SA 2024-05-11 18:52:03.437 +0000 UTC User created success}
+2024/05/11 21:52:03 &{549 Ivan SA 2024-05-11 18:52:03.576 +0000 UTC User created success}
+2024/05/11 21:52:03 &{56 Ivan SA 2024-05-11 18:52:03.685 +0000 UTC User created success}
+2024/05/11 21:52:03 &{103 Ivan SA 2024-05-11 18:52:03.826 +0000 UTC User created success}
+2024/05/11 21:52:03 &{570 Ivan SA 2024-05-11 18:52:03.921 +0000 UTC User created success}
+2024/05/11 21:52:04 &{186 Ivan SA 2024-05-11 18:52:04.018 +0000 UTC User created success}
+2024/05/11 21:52:04 &{442 Ivan SA 2024-05-11 18:52:04.168 +0000 UTC User created success}
+2024/05/11 21:52:04 &{859 Ivan SA 2024-05-11 18:52:04.312 +0000 UTC User created success}
+time="2024-05-11T21:52:04+03:00" level=info msg="Получена структура созданного User с параметрами:{859 Ivan SA 2024-05-11 18:52:04.312 +0000 UTC User created success}" func="UserHandler.go:63" file="UserHandler.go:63"
+time="2024-05-11T21:52:04+03:00" level=info msg="Вернули ответ:{\"Id\":859,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-11T18:52:04.312Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:66" file="UserHandler.go:66"
+time="2024-05-11T21:52:04+03:00" level=info msg="ID=: 859" func="UserHandler.go:71" file="UserHandler.go:71"
+time="2024-05-11T21:52:04+03:00" level=info msg="Пользователь успешно создан с ID: 859" func="UserHandler.go:77" file="UserHandler.go:77"
+2024/05/11 21:52:04 Created user: 859
+time="2024-05-11T21:52:43+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/11 21:52:43 Создан пользователь с ID = 941
+2024/05/11 21:52:43 начало проверки пользователя с ID = 941
+time="2024-05-11T21:52:44+03:00" level=info msg="Получена структура созданного User с параметрами:{941 Ivan SA 2024-05-11 18:52:43.56 +0000 UTC User created sucess}" func="UserHandler.go:63" file="UserHandler.go:63"
+time="2024-05-11T21:52:44+03:00" level=info msg="Вернули ответ:{\"Id\":941,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-11T18:52:43.56Z\",\"Comment\":\"User created sucess\"}" func="UserHandler.go:66" file="UserHandler.go:66"
+time="2024-05-11T21:52:44+03:00" level=info msg="ID=: 941" func="UserHandler.go:71" file="UserHandler.go:71"
+time="2024-05-11T21:52:44+03:00" level=info msg="Пользователь успешно создан с ID: 941" func="UserHandler.go:77" file="UserHandler.go:77"
+2024/05/11 21:52:44 Created user: 941
+time="2024-05-11T21:52:51+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/11 21:52:51 Создан пользователь с ID = 634
+2024/05/11 21:52:51 начало проверки пользователя с ID = 634
+time="2024-05-11T21:52:51+03:00" level=info msg="Получена структура созданного User с параметрами:{634 Ivan SA 2024-05-11 18:52:51.157 +0000 UTC User created sucess}" func="UserHandler.go:63" file="UserHandler.go:63"
+time="2024-05-11T21:52:51+03:00" level=info msg="Вернули ответ:{\"Id\":634,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-11T18:52:51.157Z\",\"Comment\":\"User created sucess\"}" func="UserHandler.go:66" file="UserHandler.go:66"
+time="2024-05-11T21:52:51+03:00" level=info msg="ID=: 634" func="UserHandler.go:71" file="UserHandler.go:71"
+time="2024-05-11T21:52:51+03:00" level=info msg="Пользователь успешно создан с ID: 634" func="UserHandler.go:77" file="UserHandler.go:77"
+2024/05/11 21:52:51 Created user: 634
+time="2024-05-11T21:52:51+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-11T21:52:52+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:52:52+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/11 21:52:52 name:"IvanS" job:"SA" created:{seconds:1714237619 nanos:660000000} id:791
+time="2024-05-11T21:53:21+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/11 21:53:21 Создан пользователь с ID = 377
+2024/05/11 21:53:21 начало проверки пользователя с ID = 377
+2024/05/11 21:53:22 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/11 21:53:22 &{343 Ivan SA 2024-05-11 18:53:22.116 +0000 UTC User created success}
+2024/05/11 21:53:22 &{845 Ivan SA 2024-05-11 18:53:22.214 +0000 UTC User created success}
+time="2024-05-11T21:53:22+03:00" level=info msg="Получена структура созданного User с параметрами:{845 Ivan SA 2024-05-11 18:53:22.214 +0000 UTC User created success}" func="UserHandler.go:63" file="UserHandler.go:63"
+time="2024-05-11T21:53:22+03:00" level=info msg="Вернули ответ:{\"Id\":845,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-11T18:53:22.214Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:66" file="UserHandler.go:66"
+time="2024-05-11T21:53:22+03:00" level=info msg="ID=: 845" func="UserHandler.go:71" file="UserHandler.go:71"
+time="2024-05-11T21:53:22+03:00" level=info msg="Пользователь успешно создан с ID: 845" func="UserHandler.go:77" file="UserHandler.go:77"
+2024/05/11 21:53:22 Created user: 845
+time="2024-05-11T21:53:22+03:00" level=info msg="Recieved User" func="UserHandler.go:173" file="UserHandler.go:173" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-11T21:53:23+03:00" level=info msg="SQL Query: update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\", id=791" func="db.go:95" file="db.go:95"
+time="2024-05-11T21:53:23+03:00" level=info msg="query results%!(EXTRA <nil>)" func="db.go:97" file="db.go:97"
+time="2024-05-11T21:53:23+03:00" level=info msg="User ID= " func="UserHandler.go:185" file="UserHandler.go:185" Id=791
+time="2024-05-11T21:53:23+03:00" level=info msg="Updated User" func="UserHandler.go:203" file="UserHandler.go:203" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/11 21:53:23 bodyString: {"Id":791,"name":"IvanS","job":"SA"}
+2024/05/11 21:53:23 response={Id:791 Name:IvanS Job:SA}
+2024/05/11 21:53:23 Updated: {791 IvanS SA}
+time="2024-05-11T21:53:23+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-11T21:53:24+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:53:24+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/11 21:53:24 name:"IvanS" job:"SA" created:{seconds:1714237619 nanos:660000000} id:791
+time="2024-05-11T21:54:29+03:00" level=info msg="Create router" func="main.go:19" file="main.go:19"
+time="2024-05-11T21:54:29+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-11T21:54:29+03:00" level=info msg="Start app" func="main.go:31" file="main.go:31"
+time="2024-05-11T21:54:29+03:00" level=info msg="Start HTTP" func="main.go:41" file="main.go:41"
+time="2024-05-11T21:54:29+03:00" level=info msg="Start GRPC" func="main.go:61" file="main.go:61"
+time="2024-05-11T21:54:29+03:00" level=info msg="Start server" func="main.go:48" file="main.go:48"
+time="2024-05-11T21:54:35+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:115" file="UserHandler.go:115"
+time="2024-05-11T21:54:35+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:125" file="UserHandler.go:125"
+time="2024-05-11T21:54:36+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-11T21:54:36+03:00" level=info msg="Found user {%!s(int=791) IvanS SA 2024-04-27 17:06:59.66 +0000 UTC }" func="UserHandler.go:144" file="UserHandler.go:144"
+time="2024-05-12T10:43:15+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:115" file="UserHandler.go:115"
+time="2024-05-12T10:43:15+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:125" file="UserHandler.go:125"
+time="2024-05-12T10:43:15+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-12T10:43:16+03:00" level=info msg="Found user {%!s(int=791) IvanS SA 2024-04-27 17:06:59.66 +0000 UTC }" func="UserHandler.go:144" file="UserHandler.go:144"
+time="2024-05-12T11:19:07+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-12T11:19:07+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-12T11:19:07+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-12T11:19:07+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-12T11:19:07+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-12T11:19:07+03:00" level=info msg="Start GRPC" func="main.go:63" file="main.go:63"
+time="2024-05-12T11:19:07+03:00" level=info msg="Start server" func="main.go:50" file="main.go:50"
+time="2024-05-12T11:19:26+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-12T11:19:26+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-12T11:19:26+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-12T11:19:26+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-12T11:19:26+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-12T11:19:26+03:00" level=info msg="Start GRPC" func="main.go:63" file="main.go:63"
+time="2024-05-12T11:19:26+03:00" level=info msg="Start server" func="main.go:50" file="main.go:50"
+time="2024-05-12T11:19:35+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-12T11:19:35+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-12T11:19:35+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-12T11:19:35+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-12T11:19:35+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-12T11:19:35+03:00" level=info msg="Start GRPC" func="main.go:63" file="main.go:63"
+time="2024-05-12T11:19:35+03:00" level=info msg="Start server" func="main.go:50" file="main.go:50"
+time="2024-05-12T11:21:03+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-12T11:21:03+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-12T11:21:03+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-12T11:21:03+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-12T11:21:03+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-12T11:21:03+03:00" level=info msg="Start GRPC" func="main.go:62" file="main.go:62"
+time="2024-05-12T12:06:54+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=0
+time="2024-05-12T12:06:54+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=0" func="db.go:74" file="db.go:74"
+time="2024-05-12T12:06:54+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="0001-01-01 00:00:00 +0000 UTC" Id=0 Job= Name=
+time="2024-05-12T12:07:37+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-12T12:07:38+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-12T12:07:38+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-12T12:08:52+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-12T12:08:52+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-12T12:08:52+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-12T12:09:00+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:115" file="UserHandler.go:115"
+time="2024-05-12T12:09:00+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:125" file="UserHandler.go:125"
+time="2024-05-12T12:09:00+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-12T12:09:00+03:00" level=info msg="Found user {%!s(int=791) IvanS SA 2024-04-27 17:06:59.66 +0000 UTC }" func="UserHandler.go:144" file="UserHandler.go:144"
+time="2024-05-12T12:09:06+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-12T12:09:07+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-12T12:09:07+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-12T12:09:12+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:115" file="UserHandler.go:115"
+time="2024-05-12T12:09:12+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:125" file="UserHandler.go:125"
+time="2024-05-12T12:09:13+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-12T12:09:13+03:00" level=info msg="Found user {%!s(int=791) IvanS SA 2024-04-27 17:06:59.66 +0000 UTC }" func="UserHandler.go:144" file="UserHandler.go:144"
+time="2024-05-12T12:09:18+03:00" level=info msg="Input req" func="UserHandler.go:242" file="UserHandler.go:242" Id=791
+time="2024-05-12T12:09:18+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-12T12:09:19+03:00" level=info msg="Found User" func="UserHandler.go:266" file="UserHandler.go:266" Created="2024-04-27 17:06:59.66 +0000 UTC" Id=791 Job=SA Name=IvanS
+2024/05/12 12:09:53 Создан пользователь с ID = 213
+2024/05/12 12:09:53 начало проверки пользователя с ID = 213
+2024/05/12 12:09:54 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/12 12:09:54 &{944 Ivan SA 2024-05-12 09:09:54.2 +0000 UTC User created success}
+time="2024-05-12T12:09:54+03:00" level=info msg="Получена структура созданного User с параметрами:{944 Ivan SA 2024-05-12 09:09:54.2 +0000 UTC User created success}" func="UserHandler.go:63" file="UserHandler.go:63"
+time="2024-05-12T12:09:54+03:00" level=info msg="Вернули ответ:{\"Id\":944,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-12T09:09:54.2Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:66" file="UserHandler.go:66"
+time="2024-05-12T12:09:54+03:00" level=info msg="ID=: 944" func="UserHandler.go:71" file="UserHandler.go:71"
+time="2024-05-12T12:09:54+03:00" level=info msg="Пользователь успешно создан с ID: 944" func="UserHandler.go:77" file="UserHandler.go:77"
+time="2024-05-16T20:40:12+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-16T20:40:12+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-16T20:40:12+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-16T20:40:12+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-16T20:40:12+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-16T20:40:12+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+2024/05/16 20:40:53 Создан пользователь с ID = 422
+2024/05/16 20:40:53 начало проверки пользователя с ID = 422
+2024/05/16 20:40:53 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/16 20:40:53 &{926 Ivan SA 2024-05-16 17:40:53.866 +0000 UTC User created success}
+time="2024-05-16T20:40:54+03:00" level=info msg="Получена структура созданного User с параметрами:{926 Ivan SA 2024-05-16 17:40:53.866 +0000 UTC User created success}" func="UserHandler.go:63" file="UserHandler.go:63"
+time="2024-05-16T20:40:54+03:00" level=info msg="Вернули ответ:{\"Id\":926,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-16T17:40:53.866Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:66" file="UserHandler.go:66"
+time="2024-05-16T20:40:54+03:00" level=info msg="ID=: 926" func="UserHandler.go:71" file="UserHandler.go:71"
+time="2024-05-16T20:40:54+03:00" level=info msg="Пользователь успешно создан с ID: 926" func="UserHandler.go:77" file="UserHandler.go:77"
+time="2024-05-16T20:41:06+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:230" file="UserHandler.go:230"
+time="2024-05-16T20:41:06+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:240" file="UserHandler.go:240"
+time="2024-05-16T20:41:06+03:00" level=info msg="SQL Query: delete from users where id = :id, id=791" func="db.go:95" file="db.go:95"
+time="2024-05-16T20:41:06+03:00" level=info msg="Error after append ERROR: syntax error at or near \":\" (SQLSTATE 42601)" func="db.go:99" file="db.go:99"
+time="2024-05-16T20:41:06+03:00" level=fatal msg="ERROR: syntax error at or near \":\" (SQLSTATE 42601)" func="UserHandler.go:251" file="UserHandler.go:251"
+time="2024-05-16T20:46:14+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-16T20:46:14+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-16T20:46:14+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-16T20:46:14+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-16T20:46:14+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-16T20:46:14+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+time="2024-05-16T20:46:18+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:115" file="UserHandler.go:115"
+time="2024-05-16T20:46:18+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:125" file="UserHandler.go:125"
+time="2024-05-16T20:46:18+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-16T20:46:18+03:00" level=info msg="Found user {%!s(int=791) IvanS SA 2024-04-27 17:06:59.66 +0000 UTC }" func="UserHandler.go:144" file="UserHandler.go:144"
+time="2024-05-16T20:46:23+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:230" file="UserHandler.go:230"
+time="2024-05-16T20:46:23+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:240" file="UserHandler.go:240"
+time="2024-05-16T20:46:23+03:00" level=info msg="SQL Query: delete from users where id = :$1, id=791" func="db.go:94" file="db.go:94"
+time="2024-05-16T20:46:23+03:00" level=info msg="Error after append ERROR: syntax error at or near \":\" (SQLSTATE 42601)" func="db.go:98" file="db.go:98"
+time="2024-05-16T20:46:23+03:00" level=fatal msg="ERROR: syntax error at or near \":\" (SQLSTATE 42601)" func="UserHandler.go:251" file="UserHandler.go:251"
+time="2024-05-16T20:47:17+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-16T20:47:17+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-16T20:47:17+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-16T20:47:17+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-16T20:47:17+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+time="2024-05-16T20:47:17+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-16T20:47:18+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:230" file="UserHandler.go:230"
+time="2024-05-16T20:47:18+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:240" file="UserHandler.go:240"
+time="2024-05-16T20:47:19+03:00" level=info msg="SQL Query: delete from users where id = $1, id=791" func="db.go:94" file="db.go:94"
+time="2024-05-16T20:47:24+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:115" file="UserHandler.go:115"
+time="2024-05-16T20:47:24+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:125" file="UserHandler.go:125"
+time="2024-05-16T20:47:24+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-16T20:47:25+03:00" level=error msg="Пользователь не найден: no rows in result set" func="UserHandler.go:136" file="UserHandler.go:136"
+2024/05/16 20:47:29 Создан пользователь с ID = 160
+2024/05/16 20:47:29 начало проверки пользователя с ID = 160
+2024/05/16 20:47:29 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/16 20:47:29 &{682 Ivan SA 2024-05-16 17:47:29.743 +0000 UTC User created success}
+time="2024-05-16T20:47:30+03:00" level=info msg="Получена структура созданного User с параметрами:{682 Ivan SA 2024-05-16 17:47:29.743 +0000 UTC User created success}" func="UserHandler.go:63" file="UserHandler.go:63"
+time="2024-05-16T20:47:30+03:00" level=info msg="Вернули ответ:{\"Id\":682,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-16T17:47:29.743Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:66" file="UserHandler.go:66"
+time="2024-05-16T20:47:30+03:00" level=info msg="ID=: 682" func="UserHandler.go:71" file="UserHandler.go:71"
+time="2024-05-16T20:47:30+03:00" level=info msg="Пользователь успешно создан с ID: 682" func="UserHandler.go:77" file="UserHandler.go:77"
+time="2024-05-16T20:47:40+03:00" level=info msg="Query params http in:map[id:[682]]" func="UserHandler.go:230" file="UserHandler.go:230"
+time="2024-05-16T20:47:40+03:00" level=info msg="Query params pars:%!s(int=682)" func="UserHandler.go:240" file="UserHandler.go:240"
+time="2024-05-16T20:47:41+03:00" level=info msg="SQL Query: delete from users where id = $1, id=682" func="db.go:94" file="db.go:94"
+time="2024-05-17T12:42:55+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-17T12:42:55+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-17T12:42:55+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-17T12:42:55+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-17T12:42:55+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-17T12:42:55+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+time="2024-05-17T13:48:26+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-17T13:48:26+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-17T13:48:26+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-17T13:48:26+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-17T13:48:26+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+time="2024-05-17T13:48:26+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+2024/05/17 13:48:39 Создан пользователь с ID = 90
+2024/05/17 13:48:39 начало проверки пользователя с ID = 90
+2024/05/17 13:48:39 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/17 13:48:39 &{570 Ivan SA 2024-05-17 10:48:39.621 +0000 UTC User created success}
+2024/05/17 13:48:39 &{920 Ivan SA 2024-05-17 10:48:39.744 +0000 UTC User created success}
+time="2024-05-17T13:48:40+03:00" level=info msg="Получена структура созданного User с параметрами:{920 Ivan SA 2024-05-17 10:48:39.744 +0000 UTC User created success}" func="UserHandler.go:64" file="UserHandler.go:64"
+time="2024-05-17T13:48:40+03:00" level=info msg="Вернули ответ:{\"Id\":920,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-17T10:48:39.744Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:67" file="UserHandler.go:67"
+time="2024-05-17T13:48:40+03:00" level=info msg="ID=: 920" func="UserHandler.go:72" file="UserHandler.go:72"
+time="2024-05-17T13:48:40+03:00" level=info msg="Пользователь успешно создан с ID: 920" func="UserHandler.go:78" file="UserHandler.go:78"
+time="2024-05-17T13:48:48+03:00" level=info msg="Query params http in:map[id:[920]]" func="UserHandler.go:231" file="UserHandler.go:231"
+time="2024-05-17T13:48:48+03:00" level=info msg="Query params pars:%!s(int=920)" func="UserHandler.go:241" file="UserHandler.go:241"
+time="2024-05-17T13:48:48+03:00" level=info msg="SQL Query: delete from users where id = $1, id=920" func="db.go:100" file="db.go:100"
+time="2024-05-17T13:48:53+03:00" level=info msg="Query params http in:map[id:[920]]" func="UserHandler.go:116" file="UserHandler.go:116"
+time="2024-05-17T13:48:53+03:00" level=info msg="Query params pars:%!s(int=920)" func="UserHandler.go:126" file="UserHandler.go:126"
+time="2024-05-17T13:48:53+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=920" func="db.go:74" file="db.go:74"
+time="2024-05-17T13:48:53+03:00" level=info msg="Found user {%!s(int=920) Ivan SA 2024-05-17 10:48:39.744 +0000 UTC }" func="UserHandler.go:145" file="UserHandler.go:145"
+time="2024-05-17T13:49:01+03:00" level=info msg="Query params http in:map[id:[920]]" func="UserHandler.go:231" file="UserHandler.go:231"
+time="2024-05-17T13:49:01+03:00" level=info msg="Query params pars:%!s(int=920)" func="UserHandler.go:241" file="UserHandler.go:241"
+time="2024-05-17T13:49:02+03:00" level=info msg="SQL Query: delete from users where id = $1, id=920" func="db.go:100" file="db.go:100"
+time="2024-05-17T13:50:26+03:00" level=info msg="Query params http in:map[id:[920]]" func="UserHandler.go:231" file="UserHandler.go:231"
+time="2024-05-17T13:50:26+03:00" level=info msg="Query params pars:%!s(int=920)" func="UserHandler.go:241" file="UserHandler.go:241"
+time="2024-05-17T13:50:27+03:00" level=info msg="SQL Query: delete from users where id = $1, id=920" func="db.go:100" file="db.go:100"
+time="2024-05-17T13:50:38+03:00" level=info msg="Transaction rollback failed: conn closed\n" func="db.go:105" file="db.go:105"
+time="2024-05-17T13:50:38+03:00" level=fatal msg="conn closed" func="UserHandler.go:252" file="UserHandler.go:252"
+time="2024-05-17T13:50:56+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-17T13:50:56+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-17T13:50:56+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-17T13:50:56+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-17T13:50:56+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-17T13:50:56+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+time="2024-05-17T13:50:58+03:00" level=info msg="Query params http in:map[id:[920]]" func="UserHandler.go:231" file="UserHandler.go:231"
+time="2024-05-17T13:50:58+03:00" level=info msg="Query params pars:%!s(int=920)" func="UserHandler.go:241" file="UserHandler.go:241"
+time="2024-05-17T13:50:58+03:00" level=info msg="SQL Query: delete from users where id = $1, id=920" func="db.go:100" file="db.go:100"
+time="2024-05-17T13:51:01+03:00" level=info msg="Query params http in:map[id:[920]]" func="UserHandler.go:231" file="UserHandler.go:231"
+time="2024-05-17T13:51:01+03:00" level=info msg="Query params pars:%!s(int=920)" func="UserHandler.go:241" file="UserHandler.go:241"
+time="2024-05-17T13:51:01+03:00" level=info msg="SQL Query: delete from users where id = $1, id=920" func="db.go:100" file="db.go:100"
+time="2024-05-17T13:53:43+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-17T13:53:43+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-17T13:53:43+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-17T13:53:43+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-17T13:53:43+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-17T13:53:43+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+time="2024-05-17T13:53:46+03:00" level=info msg="Query params http in:map[id:[920]]" func="UserHandler.go:231" file="UserHandler.go:231"
+time="2024-05-17T13:53:46+03:00" level=info msg="Query params pars:%!s(int=920)" func="UserHandler.go:241" file="UserHandler.go:241"
+time="2024-05-17T13:53:47+03:00" level=info msg="SQL Query: delete from users where id = $1, id=920" func="db.go:100" file="db.go:100"
+time="2024-05-17T13:53:48+03:00" level=info msg="Query params http in:map[id:[920]]" func="UserHandler.go:231" file="UserHandler.go:231"
+time="2024-05-17T13:53:48+03:00" level=info msg="Query params pars:%!s(int=920)" func="UserHandler.go:241" file="UserHandler.go:241"
+time="2024-05-17T13:53:49+03:00" level=info msg="SQL Query: delete from users where id = $1, id=920" func="db.go:100" file="db.go:100"
+2024/05/17 13:54:01 Создан пользователь с ID = 625
+2024/05/17 13:54:01 начало проверки пользователя с ID = 625
+time="2024-05-17T13:54:02+03:00" level=info msg="Получена структура созданного User с параметрами:{625 Ivan SA 2024-05-17 10:54:01.864 +0000 UTC User created sucess}" func="UserHandler.go:64" file="UserHandler.go:64"
+time="2024-05-17T13:54:02+03:00" level=info msg="Вернули ответ:{\"Id\":625,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-17T10:54:01.864Z\",\"Comment\":\"User created sucess\"}" func="UserHandler.go:67" file="UserHandler.go:67"
+time="2024-05-17T13:54:02+03:00" level=info msg="ID=: 625" func="UserHandler.go:72" file="UserHandler.go:72"
+time="2024-05-17T13:54:02+03:00" level=info msg="Пользователь успешно создан с ID: 625" func="UserHandler.go:78" file="UserHandler.go:78"
+time="2024-05-17T13:54:08+03:00" level=info msg="Query params http in:map[id:[625]]" func="UserHandler.go:231" file="UserHandler.go:231"
+time="2024-05-17T13:54:08+03:00" level=info msg="Query params pars:%!s(int=625)" func="UserHandler.go:241" file="UserHandler.go:241"
+time="2024-05-17T13:54:09+03:00" level=info msg="SQL Query: delete from users where id = $1, id=625" func="db.go:100" file="db.go:100"
+time="2024-05-17T13:54:10+03:00" level=info msg="Query params http in:map[id:[625]]" func="UserHandler.go:231" file="UserHandler.go:231"
+time="2024-05-17T13:54:10+03:00" level=info msg="Query params pars:%!s(int=625)" func="UserHandler.go:241" file="UserHandler.go:241"
+time="2024-05-17T13:54:11+03:00" level=info msg="SQL Query: delete from users where id = $1, id=625" func="db.go:100" file="db.go:100"
+time="2024-05-17T13:55:28+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-17T13:55:28+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-17T13:55:28+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-17T13:55:28+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-17T13:55:28+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-17T13:55:28+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+2024/05/17 13:55:39 Создан пользователь с ID = 863
+2024/05/17 13:55:39 начало проверки пользователя с ID = 863
+time="2024-05-17T13:55:40+03:00" level=info msg="Получена структура созданного User с параметрами:{863 Ivan SA 2024-05-17 10:55:39.727 +0000 UTC User created sucess}" func="UserHandler.go:64" file="UserHandler.go:64"
+time="2024-05-17T13:55:40+03:00" level=info msg="Вернули ответ:{\"Id\":863,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-17T10:55:39.727Z\",\"Comment\":\"User created sucess\"}" func="UserHandler.go:67" file="UserHandler.go:67"
+time="2024-05-17T13:55:40+03:00" level=info msg="ID=: 863" func="UserHandler.go:72" file="UserHandler.go:72"
+time="2024-05-17T13:55:40+03:00" level=info msg="Пользователь успешно создан с ID: 863" func="UserHandler.go:78" file="UserHandler.go:78"
+time="2024-05-17T13:55:46+03:00" level=info msg="Query params http in:map[id:[863]]" func="UserHandler.go:231" file="UserHandler.go:231"
+time="2024-05-17T13:55:46+03:00" level=info msg="Query params pars:%!s(int=863)" func="UserHandler.go:241" file="UserHandler.go:241"
+time="2024-05-17T13:55:46+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:100" file="db.go:100"
+time="2024-05-17T13:55:46+03:00" level=info msg="SQL Query: delete from users where id = $1, id=863" func="db.go:101" file="db.go:101"
+time="2024-05-17T13:55:47+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:115" file="db.go:115"
+time="2024-05-17T17:12:58+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-17T17:12:58+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-17T17:12:58+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-17T17:12:58+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-17T17:12:58+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+time="2024-05-17T17:12:58+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-17T17:13:17+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/17 17:13:17 Создан пользователь с ID = 602
+2024/05/17 17:13:17 начало проверки пользователя с ID = 602
+time="2024-05-17T17:13:18+03:00" level=info msg="Получена структура созданного User с параметрами:{602 Ivan SA 2024-05-17 14:13:17.922 +0000 UTC User created sucess}" func="UserHandler.go:64" file="UserHandler.go:64"
+time="2024-05-17T17:13:18+03:00" level=info msg="Вернули ответ:{\"Id\":602,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-17T14:13:17.922Z\",\"Comment\":\"User created sucess\"}" func="UserHandler.go:67" file="UserHandler.go:67"
+time="2024-05-17T17:13:18+03:00" level=info msg="ID=: 602" func="UserHandler.go:72" file="UserHandler.go:72"
+time="2024-05-17T17:13:18+03:00" level=info msg="Пользователь успешно создан с ID: 602" func="UserHandler.go:78" file="UserHandler.go:78"
+2024/05/17 17:13:18 Created user: 602
+time="2024-05-17T17:13:18+03:00" level=info msg="Recieved User" func="UserHandler.go:174" file="UserHandler.go:174" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=791 Job=SA Name=IvanS
+time="2024-05-17T17:13:19+03:00" level=info msg="SQL Query: update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\", id=791" func="db.go:124" file="db.go:124"
+time="2024-05-17T17:13:19+03:00" level=info msg="query results%!(EXTRA *errors.errorString=no rows in result set)" func="db.go:126" file="db.go:126"
+time="2024-05-17T17:13:19+03:00" level=info msg="User ID= " func="UserHandler.go:186" file="UserHandler.go:186" Id=0
+time="2024-05-17T17:13:19+03:00" level=info msg="Не найен пользователь с" func="UserHandler.go:194" file="UserHandler.go:194" Id=791
+2024/05/17 17:13:19 bodyString: user not found
+2024/05/17 17:13:19 response={Id:0 Name: Job:}
+2024/05/17 17:13:19 Updated: {0  }
+time="2024-05-17T17:13:19+03:00" level=info msg="Input req" func="UserHandler.go:274" file="UserHandler.go:274" Id=791
+time="2024-05-17T17:13:19+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:74" file="db.go:74"
+time="2024-05-17T17:13:19+03:00" level=info msg="Found User" func="UserHandler.go:298" file="UserHandler.go:298" Created="0001-01-01 00:00:00 +0000 UTC" Id=0 Job= Name=
+2024/05/17 17:13:19 created:{seconds:-62135596800}
+time="2024-05-17T17:52:52+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/17 17:52:53 Создан пользователь с ID = 21
+2024/05/17 17:52:53 начало проверки пользователя с ID = 21
+2024/05/17 17:52:53 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/17 17:52:53 &{778 Ivan SA 2024-05-17 14:52:53.394 +0000 UTC User created success}
+time="2024-05-17T17:52:53+03:00" level=info msg="Получена структура созданного User с параметрами:{778 Ivan SA 2024-05-17 14:52:53.394 +0000 UTC User created success}" func="UserHandler.go:64" file="UserHandler.go:64"
+time="2024-05-17T17:52:53+03:00" level=info msg="Вернули ответ:{\"Id\":778,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-17T14:52:53.394Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:67" file="UserHandler.go:67"
+time="2024-05-17T17:52:53+03:00" level=info msg="ID=: 778" func="UserHandler.go:72" file="UserHandler.go:72"
+time="2024-05-17T17:52:53+03:00" level=info msg="Пользователь успешно создан с ID: 778" func="UserHandler.go:78" file="UserHandler.go:78"
+time="2024-05-17T17:55:53+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/17 17:55:53 Создан пользователь с ID = 963
+2024/05/17 17:55:53 начало проверки пользователя с ID = 963
+time="2024-05-19T13:12:55+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-19T13:12:55+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-19T13:12:55+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T13:12:55+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-19T13:12:55+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+time="2024-05-19T13:12:55+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-19T13:13:24+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-19T13:13:24+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-19T13:13:24+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T13:13:24+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-19T13:13:24+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-19T13:13:24+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+2024/05/19 13:13:32 Создан пользователь с ID = 7
+2024/05/19 13:13:32 начало проверки пользователя с ID = 7
+2024/05/19 13:13:32 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/19 13:13:32 &{951 Ivan SA 2024-05-19 10:13:32.972 +0000 UTC User created success}
+time="2024-05-19T13:13:33+03:00" level=info msg="Получена структура созданного User с параметрами:{951 Ivan SA 2024-05-19 10:13:32.972 +0000 UTC User created success}" func="UserHandler.go:64" file="UserHandler.go:64"
+time="2024-05-19T13:13:33+03:00" level=info msg="Вернули ответ:{\"Id\":951,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-19T10:13:32.972Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:67" file="UserHandler.go:67"
+time="2024-05-19T13:13:33+03:00" level=info msg="ID=: 951" func="UserHandler.go:72" file="UserHandler.go:72"
+time="2024-05-19T13:13:33+03:00" level=info msg="Пользователь успешно создан с ID: 951" func="UserHandler.go:78" file="UserHandler.go:78"
+2024/05/19 13:14:17 Создан пользователь с ID = 534
+2024/05/19 13:14:17 начало проверки пользователя с ID = 534
+2024/05/19 13:14:17 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/19 13:14:17 &{199 Ivan SA 2024-05-19 10:14:17.365 +0000 UTC User created success}
+2024/05/19 13:14:17 &{61 Ivan SA 2024-05-19 10:14:17.479 +0000 UTC User created success}
+2024/05/19 13:14:17 &{109 Ivan SA 2024-05-19 10:14:17.589 +0000 UTC User created success}
+2024/05/19 13:14:17 &{473 Ivan SA 2024-05-19 10:14:17.694 +0000 UTC User created success}
+2024/05/19 13:14:17 &{406 Ivan SA 2024-05-19 10:14:17.802 +0000 UTC User created success}
+2024/05/19 13:14:17 &{279 Ivan SA 2024-05-19 10:14:17.902 +0000 UTC User created success}
+2024/05/19 13:14:18 &{980 Ivan SA 2024-05-19 10:14:18.012 +0000 UTC User created success}
+time="2024-05-19T13:14:18+03:00" level=info msg="Получена структура созданного User с параметрами:{980 Ivan SA 2024-05-19 10:14:18.012 +0000 UTC User created success}" func="UserHandler.go:64" file="UserHandler.go:64"
+time="2024-05-19T13:14:18+03:00" level=info msg="Вернули ответ:{\"Id\":980,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-19T10:14:18.012Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:67" file="UserHandler.go:67"
+time="2024-05-19T13:14:18+03:00" level=info msg="ID=: 980" func="UserHandler.go:72" file="UserHandler.go:72"
+time="2024-05-19T13:14:18+03:00" level=info msg="Пользователь успешно создан с ID: 980" func="UserHandler.go:78" file="UserHandler.go:78"
+time="2024-05-19T13:14:27+03:00" level=info msg="Query params http in:map[id:[980]]" func="UserHandler.go:230" file="UserHandler.go:230"
+time="2024-05-19T13:14:27+03:00" level=info msg="Query params pars:%!s(int=980)" func="UserHandler.go:240" file="UserHandler.go:240"
+time="2024-05-19T13:14:27+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T13:14:27+03:00" level=info msg="SQL Query: delete from users where id = $1, id=980" func="db.go:103" file="db.go:103"
+time="2024-05-19T13:14:27+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-19T13:19:20+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-19T13:19:20+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-19T13:19:20+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T13:19:20+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-19T13:19:20+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-19T13:19:20+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+time="2024-05-19T13:21:55+03:00" level=info msg="Create router" func="main.go:20" file="main.go:20"
+time="2024-05-19T13:21:55+03:00" level=info msg="MaxProcs: 10" func="main.go:21" file="main.go:21"
+time="2024-05-19T13:21:55+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T13:21:55+03:00" level=info msg="Start app" func="main.go:33" file="main.go:33"
+time="2024-05-19T13:21:55+03:00" level=info msg="Start HTTP" func="main.go:43" file="main.go:43"
+time="2024-05-19T13:21:55+03:00" level=info msg="Start GRPC" func="main.go:58" file="main.go:58"
+time="2024-05-19T20:08:26+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-19T20:08:26+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-19T20:08:26+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T20:08:27+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-19T20:08:27+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-19T20:08:27+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-19T20:39:05+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-19T20:39:05+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-19T20:39:05+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T20:39:06+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-19T20:39:06+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-19T20:39:06+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-19T20:39:11+03:00" level=info msg="Query params http in:map[id:[980]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T20:39:11+03:00" level=info msg="Query params pars:%!s(int=980)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T20:39:11+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T20:39:11+03:00" level=info msg="SQL Query: delete from users where id = $1, id=980" func="db.go:103" file="db.go:103"
+time="2024-05-19T20:39:11+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-19T20:39:41+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T20:39:41+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T20:39:41+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T20:39:41+03:00" level=info msg="SQL Query: delete from users where id = $1, id=791" func="db.go:103" file="db.go:103"
+time="2024-05-19T20:39:42+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-19T20:39:50+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T20:39:50+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T20:39:50+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T20:39:50+03:00" level=info msg="SQL Query: delete from users where id = $1, id=791" func="db.go:103" file="db.go:103"
+time="2024-05-19T20:39:50+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-19T20:39:51+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T20:39:51+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T20:39:51+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T20:39:51+03:00" level=info msg="SQL Query: delete from users where id = $1, id=791" func="db.go:103" file="db.go:103"
+time="2024-05-19T20:39:52+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-19T20:45:45+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T21:00:34+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T21:00:47+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-19T21:00:47+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-19T21:00:47+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T21:00:47+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-19T21:00:47+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-19T21:00:47+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-19T21:00:51+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T21:01:03+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T21:01:03+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T21:01:03+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T21:01:03+03:00" level=info msg="SQL Query: delete from users where id = $1, id=791" func="db.go:103" file="db.go:103"
+time="2024-05-19T21:01:03+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-19T21:01:33+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T21:02:07+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T21:02:29+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T21:02:34+03:00" level=info msg="Query params http in:map[id:[7]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T21:02:34+03:00" level=info msg="Query params pars:%!s(int=7)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T21:02:34+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T21:02:34+03:00" level=info msg="SQL Query: delete from users where id = $1, id=7" func="db.go:103" file="db.go:103"
+time="2024-05-19T21:02:34+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-19T21:02:35+03:00" level=info msg="Query params http in:map[id:[7]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T21:02:35+03:00" level=info msg="Query params pars:%!s(int=7)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T21:02:35+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T21:02:35+03:00" level=info msg="SQL Query: delete from users where id = $1, id=7" func="db.go:103" file="db.go:103"
+time="2024-05-19T21:02:36+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-19T21:02:50+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T21:13:16+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-19T21:13:16+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-19T21:13:16+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T21:13:16+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-19T21:13:16+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-19T21:13:16+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-19T21:13:20+03:00" level=info msg="Query params http in:map[id:[7]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T21:13:20+03:00" level=info msg="Query params pars:%!s(int=7)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T21:13:20+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T21:13:20+03:00" level=info msg="SQL Query: delete from users where id = $1, id=7" func="db.go:103" file="db.go:103"
+time="2024-05-19T21:13:20+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-19T21:13:27+03:00" level=info msg="Query params http in:map[id:[drcre]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T21:13:27+03:00" level=info msg="Query params pars:%!s(int=0)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T21:13:27+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T21:13:27+03:00" level=info msg="SQL Query: delete from users where id = $1, id=0" func="db.go:103" file="db.go:103"
+time="2024-05-19T21:13:27+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+2024/05/19 21:13:27 http: superfluous response.WriteHeader call from rest/internal/user.(*Handler).DeleteUser (UserHandler.go:245)
+time="2024-05-19T21:29:30+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-19T21:29:30+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-19T21:29:30+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-19T21:29:30+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-19T21:29:30+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-19T21:29:30+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-19T21:29:34+03:00" level=info msg="Query params http in:map[id:[drcre]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T21:29:34+03:00" level=info msg="Query params pars:%!s(int=0)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T21:29:34+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T21:29:34+03:00" level=info msg="SQL Query: delete from users where id = $1, id=0" func="db.go:103" file="db.go:103"
+time="2024-05-19T21:29:34+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+2024/05/19 21:29:34 http: superfluous response.WriteHeader call from rest/internal/user.(*Handler).DeleteUser (UserHandler.go:245)
+time="2024-05-19T21:29:40+03:00" level=info msg="Query params http in:map[id:[7]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T21:29:40+03:00" level=info msg="Query params pars:%!s(int=7)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T21:29:40+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T21:29:40+03:00" level=info msg="SQL Query: delete from users where id = $1, id=7" func="db.go:103" file="db.go:103"
+time="2024-05-19T21:29:41+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-19T21:29:47+03:00" level=info msg="Query params http in:map[id:[656]]" func="UserHandler.go:232" file="UserHandler.go:232"
+time="2024-05-19T21:29:47+03:00" level=info msg="Query params pars:%!s(int=656)" func="UserHandler.go:242" file="UserHandler.go:242"
+time="2024-05-19T21:29:47+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-19T21:29:47+03:00" level=info msg="SQL Query: delete from users where id = $1, id=656" func="db.go:103" file="db.go:103"
+time="2024-05-19T21:29:47+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-23T16:37:03+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-23T16:37:03+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-23T16:37:03+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-23T16:37:05+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-23T16:37:05+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-23T16:37:05+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-23T16:44:36+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-23T16:44:36+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-23T16:44:36+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-23T16:44:37+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-23T16:44:37+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-23T16:44:37+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-23T16:53:10+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-23T16:53:10+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-23T16:53:10+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-23T16:53:11+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-23T16:53:11+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-23T16:53:11+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-23T16:54:06+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-23T16:54:06+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-23T16:54:06+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-23T16:54:06+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-23T16:54:06+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-23T16:54:06+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-23T16:54:27+03:00" level=info msg="Query params http in:map[id:[791]]" func="UserHandler.go:233" file="UserHandler.go:233"
+time="2024-05-23T16:54:27+03:00" level=info msg="Query params pars:%!s(int=791)" func="UserHandler.go:244" file="UserHandler.go:244"
+time="2024-05-23T16:54:27+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-23T16:54:27+03:00" level=info msg="SQL Query: delete from users where id = $1, id=791" func="db.go:103" file="db.go:103"
+time="2024-05-23T16:54:27+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
