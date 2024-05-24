@@ -806,3 +806,148 @@ time="2024-05-23T16:54:27+03:00" level=info msg="Query params pars:%!s(int=791)"
 time="2024-05-23T16:54:27+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
 time="2024-05-23T16:54:27+03:00" level=info msg="SQL Query: delete from users where id = $1, id=791" func="db.go:103" file="db.go:103"
 time="2024-05-23T16:54:27+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+time="2024-05-23T18:22:05+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-23T18:22:05+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-23T18:22:05+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-23T18:22:06+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-23T18:22:06+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-23T18:22:06+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-23T18:22:40+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-23T18:22:40+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-23T18:22:40+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-23T18:22:41+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-23T18:22:41+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-23T18:22:41+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+2024/05/23 18:22:41 Создан пользователь с ID = 994
+2024/05/23 18:22:41 начало проверки пользователя с ID = 994
+time="2024-05-23T18:22:41+03:00" level=info msg="Получена структура созданного User с параметрами:{994 Ivan SA 2024-05-23 15:22:41.535 +0000 UTC User created sucess}" func="UserHandler.go:57" file="UserHandler.go:57"
+time="2024-05-23T18:22:41+03:00" level=info msg="ID=: 994" func="UserHandler.go:58" file="UserHandler.go:58"
+time="2024-05-23T18:22:41+03:00" level=info msg="Вернули ответ:{\"Id\":994,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-23T15:22:41.535Z\",\"Comment\":\"User created sucess\"}" func="UserHandler.go:66" file="UserHandler.go:66"
+time="2024-05-23T18:22:41+03:00" level=info msg="ID=: 994" func="UserHandler.go:70" file="UserHandler.go:70"
+time="2024-05-23T18:22:41+03:00" level=info msg="Пользователь успешно создан с ID: 994" func="UserHandler.go:76" file="UserHandler.go:76"
+time="2024-05-23T21:44:33+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-23T21:44:33+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-23T21:44:33+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-23T21:44:34+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-23T21:44:34+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-23T21:44:34+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-23T21:48:17+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-23T21:48:17+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-23T21:48:17+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-23T21:48:17+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-23T21:48:17+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-23T21:48:17+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-23T21:48:30+03:00" level=info msg="Query params http in:map[id:[994]]" func="UserHandler.go:207" file="UserHandler.go:207"
+time="2024-05-23T21:48:30+03:00" level=info msg="Query params pars:%!s(int=994)" func="UserHandler.go:218" file="UserHandler.go:218"
+time="2024-05-23T21:48:30+03:00" level=info msg="Transaction  DeleteOnce begin" func="db.go:102" file="db.go:102"
+time="2024-05-23T21:48:30+03:00" level=info msg="SQL Query: delete from users where id = $1, id=994" func="db.go:103" file="db.go:103"
+time="2024-05-23T21:48:31+03:00" level=info msg="Transaction  DeleteOnce commit" func="db.go:117" file="db.go:117"
+2024/05/23 21:48:38 Создан пользователь с ID = 503
+2024/05/23 21:48:38 начало проверки пользователя с ID = 503
+2024/05/23 21:48:38 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/23 21:48:38 &{853 Ivan SA 2024-05-23 18:48:38.735 +0000 UTC User created success}
+time="2024-05-23T21:48:38+03:00" level=info msg="Получена структура созданного User с параметрами:{853 Ivan SA 2024-05-23 18:48:38.735 +0000 UTC User created success}" func="UserHandler.go:60" file="UserHandler.go:60"
+time="2024-05-23T21:48:38+03:00" level=info msg="ID=: 853" func="UserHandler.go:61" file="UserHandler.go:61"
+time="2024-05-23T21:48:38+03:00" level=info msg="Вернули ответ:{\"Id\":853,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-23T18:48:38.735Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:69" file="UserHandler.go:69"
+time="2024-05-23T21:48:38+03:00" level=info msg="ID=: 853" func="UserHandler.go:73" file="UserHandler.go:73"
+time="2024-05-23T21:48:38+03:00" level=info msg="Пользователь успешно создан с ID: 853" func="UserHandler.go:79" file="UserHandler.go:79"
+time="2024-05-23T21:51:19+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-23T21:51:19+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-23T21:51:19+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-23T21:51:19+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-23T21:51:19+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-23T21:51:19+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-23T21:51:20+03:00" level=info msg="Recieved User" func="UserHandler.go:158" file="UserHandler.go:158" Comment="User created success" Created="2024-05-23 18:48:38.735 +0000 UTC" Id=853 Job=SA Name=Ivan
+time="2024-05-23T21:51:20+03:00" level=info msg="SQL Query: update users set  \"Name\" = $2, job= $3 where id = $1  returning id, job,\"Name\", id=853" func="db.go:126" file="db.go:126"
+time="2024-05-23T21:51:20+03:00" level=info msg="query results%!(EXTRA <nil>)" func="db.go:128" file="db.go:128"
+time="2024-05-23T21:51:20+03:00" level=info msg="User ID= " func="UserHandler.go:163" file="UserHandler.go:163" Id=853
+time="2024-05-23T21:51:20+03:00" level=info msg="Updated User" func="UserHandler.go:181" file="UserHandler.go:181" Comment= Created="0001-01-01 00:00:00 +0000 UTC" Id=853 Job=SA Name=Ivan
+time="2024-05-23T21:51:28+03:00" level=info msg="Query params http in:map[]" func="UserHandler.go:108" file="UserHandler.go:108"
+time="2024-05-23T21:51:36+03:00" level=info msg="Query params http in:map[id:[853]]" func="UserHandler.go:108" file="UserHandler.go:108"
+time="2024-05-23T21:51:36+03:00" level=info msg="Query params pars:%!s(int=853)" func="UserHandler.go:118" file="UserHandler.go:118"
+time="2024-05-23T21:51:36+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=853" func="db.go:76" file="db.go:76"
+time="2024-05-23T21:51:36+03:00" level=info msg="Found user {%!s(int=853) Ivan SA 2024-05-23 18:48:38.735 +0000 UTC }" func="UserHandler.go:130" file="UserHandler.go:130"
+time="2024-05-23T21:51:49+03:00" level=info msg="result query0x1400011e550" func="db.go:52" file="db.go:52"
+time="2024-05-23T21:51:49+03:00" level=info msg="User recieving from database [{%!s(int=853) Ivan SA 2024-05-23 18:48:38.735 +0000 UTC } {%!s(int=951) Ivan SA 2024-05-19 10:13:32.972 +0000 UTC } {%!s(int=778) Ivan SA 2024-05-17 14:52:53.394 +0000 UTC } {%!s(int=602) Ivan SA 2024-05-17 14:13:17.922 +0000 UTC } {%!s(int=926) Ivan SA 2024-05-16 17:40:53.866 +0000 UTC } {%!s(int=944) Ivan SA 2024-05-12 09:09:54.2 +0000 UTC } {%!s(int=845) Ivan SA 2024-05-11 18:53:22.214 +0000 UTC } {%!s(int=634) Ivan SA 2024-05-11 18:52:51.157 +0000 UTC } {%!s(int=941) Ivan SA 2024-05-11 18:52:43.56 +0000 UTC } {%!s(int=859) Ivan SA 2024-05-11 18:52:04.312 +0000 UTC } {%!s(int=794) Ivan SA 2024-05-11 17:56:52.721 +0000 UTC } {%!s(int=762) Ivan SA 2024-05-11 17:56:27.012 +0000 UTC } {%!s(int=638) Ivan SA 2024-04-27 17:32:59.955 +0000 UTC } {%!s(int=841) Ivan SA 2024-04-14 09:18:57.758 +0000 UTC } {%!s(int=736) Stefan1234 SAgdf 2024-03-30 05:53:18.684 +0000 UTC } {%!s(int=862) Ivan SA 2024-03-24 08:51:31.69 +0000 UTC } {%!s(int=929) Ivan SA 2024-03-24 08:42:11.841 +0000 UTC } {%!s(int=811) Ivan SA 2024-03-20 10:00:06.154 +0000 UTC } {%!s(int=773) Ivan SA 2024-03-19 15:16:53.254 +0000 UTC } {%!s(int=939) Ivan SA 2024-03-12 12:59:38.426 +0000 UTC } {%!s(int=710) Ht Worker 2024-03-12 12:52:38.726 +0000 UTC } {%!s(int=982) Ht Worker 2024-03-12 12:52:06.656 +0000 UTC } {%!s(int=908) Ht Worker 2024-03-12 12:51:45.253 +0000 UTC } {%!s(int=845) Ht Worker 2024-03-12 12:46:31.389 +0000 UTC } {%!s(int=663) Ht Worker 2024-03-12 12:45:32.172 +0000 UTC } {%!s(int=678) Ht Worker 2024-03-12 12:44:49.195 +0000 UTC } {%!s(int=869) Ht Worker 2024-03-12 12:40:25.204 +0000 UTC } {%!s(int=946) Ht Worker 2024-03-12 12:40:12.033 +0000 UTC } {%!s(int=631) Ht Worker 2024-03-12 12:39:31.471 +0000 UTC } {%!s(int=933) Ht Worker 2024-03-12 12:31:44.103 +0000 UTC } {%!s(int=972) Ht Worker 2024-03-12 12:29:36.852 +0000 UTC } {%!s(int=64) 3c24bc25-96f3-42d6-849f-e1eba1d06e36 Worker 2024-03-12 11:52:18.635244 +0000 UTC } {%!s(int=719) Ht Worker 2024-03-12 08:55:15.066 +0000 UTC } {%!s(int=892) Ht Worker 2024-03-12 08:55:13.257 +0000 UTC } {%!s(int=783) Ht Worker 2024-03-12 08:55:11.844 +0000 UTC } {%!s(int=941) Ht Worker 2024-03-12 08:54:54.577 +0000 UTC }]" func="db.go:70" file="db.go:70"
+time="2024-05-23T21:51:49+03:00" level=info msg="Список пользователей получен: [{853 Ivan SA 2024-05-23 18:48:38.735 +0000 UTC } {951 Ivan SA 2024-05-19 10:13:32.972 +0000 UTC } {778 Ivan SA 2024-05-17 14:52:53.394 +0000 UTC } {602 Ivan SA 2024-05-17 14:13:17.922 +0000 UTC } {926 Ivan SA 2024-05-16 17:40:53.866 +0000 UTC } {944 Ivan SA 2024-05-12 09:09:54.2 +0000 UTC } {845 Ivan SA 2024-05-11 18:53:22.214 +0000 UTC } {634 Ivan SA 2024-05-11 18:52:51.157 +0000 UTC } {941 Ivan SA 2024-05-11 18:52:43.56 +0000 UTC } {859 Ivan SA 2024-05-11 18:52:04.312 +0000 UTC } {794 Ivan SA 2024-05-11 17:56:52.721 +0000 UTC } {762 Ivan SA 2024-05-11 17:56:27.012 +0000 UTC } {638 Ivan SA 2024-04-27 17:32:59.955 +0000 UTC } {841 Ivan SA 2024-04-14 09:18:57.758 +0000 UTC } {736 Stefan1234 SAgdf 2024-03-30 05:53:18.684 +0000 UTC } {862 Ivan SA 2024-03-24 08:51:31.69 +0000 UTC } {929 Ivan SA 2024-03-24 08:42:11.841 +0000 UTC } {811 Ivan SA 2024-03-20 10:00:06.154 +0000 UTC } {773 Ivan SA 2024-03-19 15:16:53.254 +0000 UTC } {939 Ivan SA 2024-03-12 12:59:38.426 +0000 UTC } {710 Ht Worker 2024-03-12 12:52:38.726 +0000 UTC } {982 Ht Worker 2024-03-12 12:52:06.656 +0000 UTC } {908 Ht Worker 2024-03-12 12:51:45.253 +0000 UTC } {845 Ht Worker 2024-03-12 12:46:31.389 +0000 UTC } {663 Ht Worker 2024-03-12 12:45:32.172 +0000 UTC } {678 Ht Worker 2024-03-12 12:44:49.195 +0000 UTC } {869 Ht Worker 2024-03-12 12:40:25.204 +0000 UTC } {946 Ht Worker 2024-03-12 12:40:12.033 +0000 UTC } {631 Ht Worker 2024-03-12 12:39:31.471 +0000 UTC } {933 Ht Worker 2024-03-12 12:31:44.103 +0000 UTC } {972 Ht Worker 2024-03-12 12:29:36.852 +0000 UTC } {64 3c24bc25-96f3-42d6-849f-e1eba1d06e36 Worker 2024-03-12 11:52:18.635244 +0000 UTC } {719 Ht Worker 2024-03-12 08:55:15.066 +0000 UTC } {892 Ht Worker 2024-03-12 08:55:13.257 +0000 UTC } {783 Ht Worker 2024-03-12 08:55:11.844 +0000 UTC } {941 Ht Worker 2024-03-12 08:54:54.577 +0000 UTC }]" func="UserHandler.go:94" file="UserHandler.go:94"
+time="2024-05-23T22:00:32+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-23T22:00:32+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-23T22:00:32+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-23T22:00:33+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-23T22:00:33+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-23T22:00:33+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-23T22:00:58+03:00" level=info msg="Input req" func="UserHandler.go:255" file="UserHandler.go:255" Id=791
+time="2024-05-23T22:00:58+03:00" level=info msg="SQL Query: select id, users.\"Name\", job, created  from users where id in ($1), id=791" func="db.go:76" file="db.go:76"
+time="2024-05-23T22:00:59+03:00" level=info msg="Found User" func="UserHandler.go:279" file="UserHandler.go:279" Created="0001-01-01 00:00:00 +0000 UTC" Id=0 Job= Name=
+time="2024-05-24T16:32:36+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-24T16:32:36+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-24T16:32:36+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-24T16:32:36+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-24T16:32:36+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-24T16:32:36+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+2024/05/24 16:32:48 Создан пользователь с ID = 432
+2024/05/24 16:32:48 начало проверки пользователя с ID = 432
+2024/05/24 16:32:48 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/24 16:32:48 &{518 Ivan SA 2024-05-24 13:32:48.761 +0000 UTC User created success}
+2024/05/24 16:32:48 &{517 Ivan SA 2024-05-24 13:32:48.898 +0000 UTC User created success}
+2024/05/24 16:32:49 &{621 Ivan SA 2024-05-24 13:32:49.035 +0000 UTC User created success}
+time="2024-05-24T16:32:49+03:00" level=info msg="Получена структура созданного User с параметрами:0x14000206010" func="UserHandler.go:68" file="UserHandler.go:68"
+time="2024-05-24T16:32:49+03:00" level=info msg="ID=: 621" func="UserHandler.go:69" file="UserHandler.go:69"
+time="2024-05-24T16:32:49+03:00" level=info msg="ID=: 621" func="UserHandler.go:58" file="UserHandler.go:58"
+time="2024-05-24T16:32:49+03:00" level=info msg="Пользователь успешно создан с ID: 621" func="UserHandler.go:59" file="UserHandler.go:59"
+time="2024-05-24T16:32:49+03:00" level=info msg="Вернули ответ:{\"Id\":621,\"name\":\"Ivan\",\"job\":\"SA\",\"Created\":\"2024-05-24T13:32:49.035Z\",\"Comment\":\"User created success\"}" func="UserHandler.go:62" file="UserHandler.go:62"
+time="2024-05-24T16:48:48+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/24 16:48:48 Создан пользователь с ID = 443
+2024/05/24 16:48:48 начало проверки пользователя с ID = 443
+2024/05/24 16:48:48 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/24 16:48:49 &{725 Ivan SA 2024-05-24 13:48:49.013 +0000 UTC User created success}
+time="2024-05-24T16:48:49+03:00" level=info msg="Получена структура созданного User с параметрами:0x1400011a428" func="UserHandler.go:68" file="UserHandler.go:68"
+time="2024-05-24T16:48:49+03:00" level=info msg="ID=: 725" func="UserHandler.go:69" file="UserHandler.go:69"
+time="2024-05-24T16:48:49+03:00" level=info msg="Созданый ID=725, id из конфигурации = 600" func="repository_test.go:64" file="repository_test.go:64"
+time="2024-05-24T17:15:28+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/24 17:15:28 Создан пользователь с ID = 412
+2024/05/24 17:15:28 начало проверки пользователя с ID = 412
+2024/05/24 17:15:28 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/24 17:15:29 &{53 Ivan SA 2024-05-24 14:15:29.061 +0000 UTC User created success}
+2024/05/24 17:15:29 &{499 Ivan SA 2024-05-24 14:15:29.179 +0000 UTC User created success}
+2024/05/24 17:15:29 &{940 Ivan SA 2024-05-24 14:15:29.307 +0000 UTC User created success}
+time="2024-05-24T17:15:29+03:00" level=info msg="Получена структура созданного User с параметрами:0x140000ba430" func="UserHandler.go:68" file="UserHandler.go:68"
+time="2024-05-24T17:15:29+03:00" level=info msg="ID=: 940" func="UserHandler.go:69" file="UserHandler.go:69"
+time="2024-05-24T17:15:29+03:00" level=info msg="Созданый ID=940, id из конфигурации = 600" func="repository_test.go:64" file="repository_test.go:64"
+time="2024-05-24T19:21:30+03:00" level=info msg="Create router" func="main.go:23" file="main.go:23"
+time="2024-05-24T19:21:30+03:00" level=info msg="MaxProcs: 10" func="main.go:24" file="main.go:24"
+time="2024-05-24T19:21:30+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+time="2024-05-24T19:21:30+03:00" level=info msg="Start app" func="main.go:48" file="main.go:48"
+time="2024-05-24T19:21:30+03:00" level=info msg="Start HTTP" func="main.go:58" file="main.go:58"
+time="2024-05-24T19:21:30+03:00" level=info msg="Start GRPC" func="main.go:73" file="main.go:73"
+time="2024-05-24T19:21:45+03:00" level=info msg="result query0x14000032360" func="db.go:52" file="db.go:52"
+time="2024-05-24T19:21:45+03:00" level=info msg="User recieving from database [{%!s(int=621) Ivan SA 2024-05-24 13:32:49.035 +0000 UTC } {%!s(int=853) Ivan SA 2024-05-23 18:48:38.735 +0000 UTC } {%!s(int=951) Ivan SA 2024-05-19 10:13:32.972 +0000 UTC } {%!s(int=778) Ivan SA 2024-05-17 14:52:53.394 +0000 UTC } {%!s(int=602) Ivan SA 2024-05-17 14:13:17.922 +0000 UTC } {%!s(int=926) Ivan SA 2024-05-16 17:40:53.866 +0000 UTC } {%!s(int=944) Ivan SA 2024-05-12 09:09:54.2 +0000 UTC } {%!s(int=845) Ivan SA 2024-05-11 18:53:22.214 +0000 UTC } {%!s(int=634) Ivan SA 2024-05-11 18:52:51.157 +0000 UTC } {%!s(int=941) Ivan SA 2024-05-11 18:52:43.56 +0000 UTC } {%!s(int=859) Ivan SA 2024-05-11 18:52:04.312 +0000 UTC } {%!s(int=794) Ivan SA 2024-05-11 17:56:52.721 +0000 UTC } {%!s(int=762) Ivan SA 2024-05-11 17:56:27.012 +0000 UTC } {%!s(int=638) Ivan SA 2024-04-27 17:32:59.955 +0000 UTC } {%!s(int=841) Ivan SA 2024-04-14 09:18:57.758 +0000 UTC } {%!s(int=736) Stefan1234 SAgdf 2024-03-30 05:53:18.684 +0000 UTC } {%!s(int=862) Ivan SA 2024-03-24 08:51:31.69 +0000 UTC } {%!s(int=929) Ivan SA 2024-03-24 08:42:11.841 +0000 UTC } {%!s(int=811) Ivan SA 2024-03-20 10:00:06.154 +0000 UTC } {%!s(int=773) Ivan SA 2024-03-19 15:16:53.254 +0000 UTC } {%!s(int=939) Ivan SA 2024-03-12 12:59:38.426 +0000 UTC } {%!s(int=710) Ht Worker 2024-03-12 12:52:38.726 +0000 UTC } {%!s(int=982) Ht Worker 2024-03-12 12:52:06.656 +0000 UTC } {%!s(int=908) Ht Worker 2024-03-12 12:51:45.253 +0000 UTC } {%!s(int=845) Ht Worker 2024-03-12 12:46:31.389 +0000 UTC } {%!s(int=663) Ht Worker 2024-03-12 12:45:32.172 +0000 UTC } {%!s(int=678) Ht Worker 2024-03-12 12:44:49.195 +0000 UTC } {%!s(int=869) Ht Worker 2024-03-12 12:40:25.204 +0000 UTC } {%!s(int=946) Ht Worker 2024-03-12 12:40:12.033 +0000 UTC } {%!s(int=631) Ht Worker 2024-03-12 12:39:31.471 +0000 UTC } {%!s(int=933) Ht Worker 2024-03-12 12:31:44.103 +0000 UTC } {%!s(int=972) Ht Worker 2024-03-12 12:29:36.852 +0000 UTC } {%!s(int=64) 3c24bc25-96f3-42d6-849f-e1eba1d06e36 Worker 2024-03-12 11:52:18.635244 +0000 UTC } {%!s(int=719) Ht Worker 2024-03-12 08:55:15.066 +0000 UTC } {%!s(int=892) Ht Worker 2024-03-12 08:55:13.257 +0000 UTC } {%!s(int=783) Ht Worker 2024-03-12 08:55:11.844 +0000 UTC } {%!s(int=941) Ht Worker 2024-03-12 08:54:54.577 +0000 UTC }]" func="db.go:70" file="db.go:70"
+time="2024-05-24T19:21:45+03:00" level=info msg="Список пользователей получен: [{621 Ivan SA 2024-05-24 13:32:49.035 +0000 UTC } {853 Ivan SA 2024-05-23 18:48:38.735 +0000 UTC } {951 Ivan SA 2024-05-19 10:13:32.972 +0000 UTC } {778 Ivan SA 2024-05-17 14:52:53.394 +0000 UTC } {602 Ivan SA 2024-05-17 14:13:17.922 +0000 UTC } {926 Ivan SA 2024-05-16 17:40:53.866 +0000 UTC } {944 Ivan SA 2024-05-12 09:09:54.2 +0000 UTC } {845 Ivan SA 2024-05-11 18:53:22.214 +0000 UTC } {634 Ivan SA 2024-05-11 18:52:51.157 +0000 UTC } {941 Ivan SA 2024-05-11 18:52:43.56 +0000 UTC } {859 Ivan SA 2024-05-11 18:52:04.312 +0000 UTC } {794 Ivan SA 2024-05-11 17:56:52.721 +0000 UTC } {762 Ivan SA 2024-05-11 17:56:27.012 +0000 UTC } {638 Ivan SA 2024-04-27 17:32:59.955 +0000 UTC } {841 Ivan SA 2024-04-14 09:18:57.758 +0000 UTC } {736 Stefan1234 SAgdf 2024-03-30 05:53:18.684 +0000 UTC } {862 Ivan SA 2024-03-24 08:51:31.69 +0000 UTC } {929 Ivan SA 2024-03-24 08:42:11.841 +0000 UTC } {811 Ivan SA 2024-03-20 10:00:06.154 +0000 UTC } {773 Ivan SA 2024-03-19 15:16:53.254 +0000 UTC } {939 Ivan SA 2024-03-12 12:59:38.426 +0000 UTC } {710 Ht Worker 2024-03-12 12:52:38.726 +0000 UTC } {982 Ht Worker 2024-03-12 12:52:06.656 +0000 UTC } {908 Ht Worker 2024-03-12 12:51:45.253 +0000 UTC } {845 Ht Worker 2024-03-12 12:46:31.389 +0000 UTC } {663 Ht Worker 2024-03-12 12:45:32.172 +0000 UTC } {678 Ht Worker 2024-03-12 12:44:49.195 +0000 UTC } {869 Ht Worker 2024-03-12 12:40:25.204 +0000 UTC } {946 Ht Worker 2024-03-12 12:40:12.033 +0000 UTC } {631 Ht Worker 2024-03-12 12:39:31.471 +0000 UTC } {933 Ht Worker 2024-03-12 12:31:44.103 +0000 UTC } {972 Ht Worker 2024-03-12 12:29:36.852 +0000 UTC } {64 3c24bc25-96f3-42d6-849f-e1eba1d06e36 Worker 2024-03-12 11:52:18.635244 +0000 UTC } {719 Ht Worker 2024-03-12 08:55:15.066 +0000 UTC } {892 Ht Worker 2024-03-12 08:55:13.257 +0000 UTC } {783 Ht Worker 2024-03-12 08:55:11.844 +0000 UTC } {941 Ht Worker 2024-03-12 08:54:54.577 +0000 UTC }]" func="UserHandler.go:104" file="UserHandler.go:104"
+time="2024-05-24T19:33:24+03:00" level=info msg="Список пользователей получен: [{0   0001-01-01 00:00:00 +0000 UTC }]" func="UserHandler.go:104" file="UserHandler.go:104"
+time="2024-05-24T19:33:24+03:00" level=info msg="получено: {Id:0 Name: Job: Created:0001-01-01 00:00:00 +0000 UTC Comment:}" func="repository_test.go:80" file="repository_test.go:80"
+time="2024-05-24T19:33:43+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/24 19:33:44 Создан пользователь с ID = 803
+2024/05/24 19:33:44 начало проверки пользователя с ID = 803
+time="2024-05-24T19:33:44+03:00" level=info msg="Получена структура созданного User с параметрами:0x1400006c438" func="UserHandler.go:68" file="UserHandler.go:68"
+time="2024-05-24T19:33:44+03:00" level=info msg="ID=: 803" func="UserHandler.go:69" file="UserHandler.go:69"
+time="2024-05-24T19:33:44+03:00" level=info msg="Созданый ID=803, id из конфигурации = 600" func="repository_test.go:64" file="repository_test.go:64"
+time="2024-05-24T19:33:49+03:00" level=info msg="read application configuration" func="config.go:44" file="config.go:44"
+2024/05/24 19:33:50 Создан пользователь с ID = 399
+2024/05/24 19:33:50 начало проверки пользователя с ID = 399
+2024/05/24 19:33:50 &{0   0001-01-01 00:00:00 +0000 UTC User created success}
+2024/05/24 19:33:50 &{632 Ivan SA 2024-05-24 16:33:50.355 +0000 UTC User created success}
+time="2024-05-24T19:33:50+03:00" level=info msg="Получена структура созданного User с параметрами:0x1400006e430" func="UserHandler.go:68" file="UserHandler.go:68"
+time="2024-05-24T19:33:50+03:00" level=info msg="ID=: 632" func="UserHandler.go:69" file="UserHandler.go:69"
+time="2024-05-24T19:33:50+03:00" level=info msg="Созданый ID=632, id из конфигурации = 600" func="repository_test.go:64" file="repository_test.go:64"
+time="2024-05-24T19:33:55+03:00" level=info msg="Список пользователей получен: [{0   0001-01-01 00:00:00 +0000 UTC }]" func="UserHandler.go:104" file="UserHandler.go:104"
+time="2024-05-24T19:33:55+03:00" level=info msg="получено: {Id:0 Name: Job: Created:0001-01-01 00:00:00 +0000 UTC Comment:}" func="repository_test.go:80" file="repository_test.go:80"
+time="2024-05-24T19:35:23+03:00" level=info msg="Список пользователей получен: [{0   0001-01-01 00:00:00 +0000 UTC }]" func="UserHandler.go:104" file="UserHandler.go:104"
+time="2024-05-24T19:35:23+03:00" level=info msg="получено: {Id:0 Name: Job: Created:0001-01-01 00:00:00 +0000 UTC Comment:}" func="repository_test.go:80" file="repository_test.go:80"
+time="2024-05-24T19:35:30+03:00" level=info msg="Список пользователей получен: [{0   0001-01-01 00:00:00 +0000 UTC }]" func="UserHandler.go:104" file="UserHandler.go:104"
+time="2024-05-24T19:35:30+03:00" level=info msg="получено: {Id:0 Name: Job: Created:0001-01-01 00:00:00 +0000 UTC Comment:}" func="repository_test.go:80" file="repository_test.go:80"
+time="2024-05-24T19:44:26+03:00" level=info msg="Список пользователей получен: [{1275 User0 Job0 2024-05-24 19:44:26.383714 +0300 MSK m=+0.004778501 Comment0} {9209 User1 Job1 2024-05-24 19:44:26.383715 +0300 MSK m=+0.004779209 Comment1} {1866 User2 Job2 2024-05-24 19:44:26.383715 +0300 MSK m=+0.004779668 Comment2} {8426 User3 Job3 2024-05-24 19:44:26.383716 +0300 MSK m=+0.004780084 Comment3} {6929 User4 Job4 2024-05-24 19:44:26.383716 +0300 MSK m=+0.004780459 Comment4}]" func="UserHandler.go:104" file="UserHandler.go:104"
+time="2024-05-24T19:44:26+03:00" level=info msg="получено: {Id:1275 Name:User0 Job:Job0 Created:2024-05-24 19:44:26.383714 +0300 MSK m=+0.004778501 Comment:Comment0}" func="repository_test.go:105" file="repository_test.go:105"
+time="2024-05-24T19:44:26+03:00" level=info msg="получено: {Id:9209 Name:User1 Job:Job1 Created:2024-05-24 19:44:26.383715 +0300 MSK m=+0.004779209 Comment:Comment1}" func="repository_test.go:105" file="repository_test.go:105"
+time="2024-05-24T19:44:26+03:00" level=info msg="получено: {Id:1866 Name:User2 Job:Job2 Created:2024-05-24 19:44:26.383715 +0300 MSK m=+0.004779668 Comment:Comment2}" func="repository_test.go:105" file="repository_test.go:105"
+time="2024-05-24T19:44:26+03:00" level=info msg="получено: {Id:8426 Name:User3 Job:Job3 Created:2024-05-24 19:44:26.383716 +0300 MSK m=+0.004780084 Comment:Comment3}" func="repository_test.go:105" file="repository_test.go:105"
+time="2024-05-24T19:44:26+03:00" level=info msg="получено: {Id:6929 Name:User4 Job:Job4 Created:2024-05-24 19:44:26.383716 +0300 MSK m=+0.004780459 Comment:Comment4}" func="repository_test.go:105" file="repository_test.go:105"
