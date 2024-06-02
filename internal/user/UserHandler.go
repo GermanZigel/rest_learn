@@ -11,9 +11,13 @@ import (
 	"rest/internal/config"
 	"rest/internal/logging"
 	"rest/internal/user/db"
+	"rest/internal/user/storage"
 	"rest/internal/userProxy"
 	"rest/pkg/client/pgclient"
+	"rest/pkg/proto"
 	"strconv"
+
+	"google.golang.org/protobuf/types/known/timestamppb"
 
 	"github.com/jackc/pgx/v4"
 	"github.com/sirupsen/logrus"
@@ -25,78 +29,61 @@ var _ Handlers.Handler = &Handler{}
 
 type Handler struct {
 	logger logging.Logger
+	repo   storage.Repository
 }
 
-func NewHandler() Handlers.Handler {
+func NewHandler(repo storage.Repository) Handlers.Handler {
 	return &Handler{
 		logger: logging.GetLogger(),
+		repo:   repo,
 	}
 }
 
-func (h *Handler) Register(router *httprouter.Router) {
+func (h *Handler) Register(router *httprouter.Router, repo storage.Repository) {
 	cfg := config.GetConfig()
 	router.GET(cfg.Listen.URI_List, h.GetList)
 	router.GET(cfg.Listen.URI_Once, h.GetUserByUid)
 	router.POST(cfg.Listen.URI_Once, h.CreateUser)
 	router.PUT(cfg.Listen.URI_Once, h.UpdateUser)
 	router.DELETE(cfg.Listen.URI_Once, h.DeleteUser)
+	router.DELETE(cfg.Listen.URI_List, h.DeleteUsers)
 
 }
+
 func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
 	logger := logging.GetLogger()
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(201)
-	CreatedUser := userProxy.Setter()
-	cfg := config.GetConfig()
-	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
-	if err != nil {
-		logger.Fatalf("%v", err)
-	}
-
-	poolClient := pgsClient.(*pgclient.PgxPoolClient)
-	pool := poolClient.Pool // Получить подлежащий пул
-
-	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
-
-	h.logger.Info("Получена структура созданного User с параметрами:", *CreatedUser)
+	CreatedUser := h.CreateUserImpl()
+	logger.Infof("ID=: %d", CreatedUser.Id)
+	logger.Infof("Пользователь успешно создан с ID: %d", CreatedUser.Id)
 	response, _ := json.Marshal(CreatedUser)
 	w.Write(response)
 	h.logger.Infof("Вернули ответ:%s", string(response))
 
-	// Использование Repository
-	//var Id string
-	_, err = Repository.Create(context.Background(), *CreatedUser)
-	logger.Infof("ID=: %d", CreatedUser.Id)
+}
+func (h *Handler) CreateUserImpl() *userProxy.User {
+	logger := logging.GetLogger()
+	User := userProxy.Setter()
+	h.logger.Info("Получена структура созданного User с параметрами:", &User)
+	logger.Infof("ID=: %d", User.Id)
+	ctx := context.Background()
+	_, err := h.repo.Create(ctx, *User)
 	if err != nil {
-		logger.Errorf("Ошибка при создании пользователя: %v", err)
-		// Обработка ошибки
-		return
+		logger.Fatalf("%v", err)
 	}
-	logger.Infof("Пользователь успешно создан с ID: %d", CreatedUser.Id)
+	return User
 
 }
 func (h *Handler) GetList(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
 	logger := logging.GetLogger()
-	cfg := config.GetConfig()
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
-	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
-	if err != nil {
-		logger.Fatalf("%v", err)
-	}
-	poolClient := pgsClient.(*pgclient.PgxPoolClient)
-	pool := poolClient.Pool                       // Получить подлежащий пул
-	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
-
-	// Использование Repository
-	ListOfUsers, err := Repository.GetList(context.Background())
+	ListOfUsers, err := h.GetListImpl()
 	if err != nil {
 		logger.Errorf("Ошибка при получении списка пользователей: %v", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		return
 	}
-	logger.Infof("Список пользователей получен: %v", ListOfUsers)
-
 	response, err := json.Marshal(ListOfUsers)
 	if err != nil {
 		logger.Errorf("Ошибка при маршалинге списка пользователей в JSON: %v", err)
@@ -107,8 +94,17 @@ func (h *Handler) GetList(w http.ResponseWriter, r *http.Request, params httprou
 	w.Write(response)
 }
 
+func (h *Handler) GetListImpl() ([]userProxy.User, error) {
+	logger := logging.GetLogger()
+	ctx := context.Background()
+	ListOfUsers, err := h.repo.GetList(ctx)
+	if err != nil {
+		return nil, err
+	}
+	logger.Infof("Список пользователей получен: %v", ListOfUsers)
+	return ListOfUsers, err
+}
 func (h *Handler) GetUserByUid(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
-	cfg := config.GetConfig()
 	logger := logging.GetLogger()
 	logger.Infof("Query params http in:%s", r.URL.Query())
 	SearchIdstr := r.URL.Query().Get("id")
@@ -122,14 +118,7 @@ func (h *Handler) GetUserByUid(w http.ResponseWriter, r *http.Request, params ht
 	}
 	logger.Infof("Query params pars:%s", SearchId)
 
-	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
-	if err != nil {
-		logger.Fatalf("%v", err)
-	}
-	poolClient := pgsClient.(*pgclient.PgxPoolClient)
-	pool := poolClient.Pool                       // Получить подлежащий пул
-	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
-	FOundUsers, err := Repository.GetOnce(context.Background(), SearchId)
+	FOundUsers, err := h.repo.GetOnce(context.Background(), SearchId)
 	if err == pgx.ErrNoRows {
 		logger.Errorf("Пользователь не найден: %v", err)
 		http.Error(w, "Not Found", http.StatusNotFound)
@@ -149,7 +138,6 @@ func (h *Handler) GetUserByUid(w http.ResponseWriter, r *http.Request, params ht
 }
 
 func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
-	cfg := config.GetConfig()
 	logger := logging.GetLogger()
 	buf, err := ioutil.ReadAll(r.Body)
 	if err != nil {
@@ -169,15 +157,8 @@ func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params http
 		"Created": user.Created,
 		"Comment": user.Comment,
 	}).Info("Recieved User")
-
-	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
-	if err != nil {
-		logger.Fatalf("%v", err)
-	}
-	poolClient := pgsClient.(*pgclient.PgxPoolClient)
-	pool := poolClient.Pool                       // Получить подлежащий пул
-	Repository := db.NewRepository(pool, &logger) // Передача пула и логгера
-	updatedUser, err := Repository.Update(context.Background(), user)
+	ctx := context.Background()
+	updatedUser, err := h.repo.Update(ctx, user)
 	logger.WithFields(logrus.Fields{
 		"Id": updatedUser.Id,
 	}).Info("User ID= ")
@@ -223,7 +204,79 @@ func (h *Handler) UpdateUser(w http.ResponseWriter, r *http.Request, params http
 	}
 }
 func (h *Handler) DeleteUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	logger := logging.GetLogger()
+	logger.Infof("Query params http in:%s", r.URL.Query())
+	SearchIdstr := r.URL.Query().Get("id")
+	SearchId, err := strconv.Atoi(SearchIdstr)
+	if err != nil {
+		// Обработка ошибки, если строка не является числом
+		fmt.Println("Ошибка:", err)
+		// Вероятно, вам также нужно отправить ошибку клиенту HTTP
+		http.Error(w, "Invalid ID", http.StatusBadRequest)
+
+	}
+	storage := h.repo
+	logger.Infof("Query params pars:%s", SearchId)
+	statusCode := h.DeleteUserLogic(SearchId, storage)
+	if statusCode == http.StatusNoContent {
+		http.Error(w, "User deleted", http.StatusNoContent)
+	} else {
+		http.Error(w, "Invalid ID", http.StatusBadRequest)
+	}
+
+}
+func (h *Handler) DeleteUserLogic(SearchId int, storage storage.Repository) int {
+	logger := logging.GetLogger()
+	ctx := context.Background()                      // Используйте контекст, который вы хотите
+	delRes, err := storage.DeleteOnce(ctx, SearchId) // Исправлено: передаем ctx и SearchId
+	if err != nil {
+		logger.Fatalf("%v", err)
+	}
+	if delRes == true {
+		return http.StatusNoContent
+	} else {
+		return http.StatusBadRequest
+	}
+}
+
+func (h *Handler) DeleteUsers(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
 	w.WriteHeader(204)
 	w.Write([]byte("This is delete of user"))
+}
 
+type UserServiceServer struct {
+}
+
+func (UserServiceServer) GetUser(ctx context.Context, input *proto.GetUserInput) (*proto.User, error) {
+	// Создаем новый экземпляр структуры proto.User
+	logger := logging.GetLogger()
+	cfg := config.GetConfig()
+	logger.WithFields(logrus.Fields{
+		"Id": input.Id,
+	}).Info("Input req")
+	var GrpcSearchId int
+	GrpcSearchId = int(input.Id)
+	pgsClient, err := pgclient.NewClient(context.TODO(), 3, cfg.Storage)
+	if err != nil {
+		logger.Fatalf("%v", err)
+	}
+	poolClient := pgsClient.(*pgclient.PgxPoolClient)
+	pool := poolClient.Pool                                             // Получить подлежащий пул
+	Repository := db.NewRepository(context.Background(), pool, &logger) // Передача пула и логгера
+	FOundUsers, err := Repository.GetOnce(context.Background(), GrpcSearchId)
+	GRPCFOundUsers := new(proto.User)
+
+	GRPCFOundUsers.Id = int32(FOundUsers.Id)
+	GRPCFOundUsers.Name = FOundUsers.Name
+	GRPCFOundUsers.Job = FOundUsers.Job
+	createdTimestamp := timestamppb.New(FOundUsers.Created)
+	GRPCFOundUsers.Created = createdTimestamp
+
+	logger.WithFields(logrus.Fields{
+		"Id":      GRPCFOundUsers.Id,
+		"Name":    GRPCFOundUsers.Name,
+		"Job":     GRPCFOundUsers.Job,
+		"Created": FOundUsers.Created,
+	}).Info("Found User")
+	return GRPCFOundUsers, nil
 }

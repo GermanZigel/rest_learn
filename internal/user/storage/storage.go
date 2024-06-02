@@ -6,9 +6,11 @@ import (
 )
 
 type Repository interface {
-	Create(ctx context.Context, author *userProxy.User) error
-	FindAll(ctx context.Context) (u []userProxy.User, err error)
-	FindOne(ctx context.Context, id string) (userProxy.User, error)
-	Update(ctx context.Context, user userProxy.User) error
-	Delete(ctx context.Context, id string) error
+	Create(ctx context.Context, user userProxy.User) (string, error)
+	GetList(ctx context.Context) (u []userProxy.User, err error)
+	GetOnce(ctx context.Context, id int) (userProxy.User, error)
+	Update(context.Context, userProxy.User) (userProxy.User, error)
+	DeleteOnce(ctx context.Context, id int) (bool, error)
 }
+
+//go:generate mockgen -source=storage.go -destination=/Users/samokat/learn/rest_learn/internal/user/storage/mock/mocks.go

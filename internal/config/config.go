@@ -12,7 +12,8 @@ type Config struct {
 	Listen  struct {
 		Type     string `yaml:"type" env-default:"port"`
 		BindIP   string `yaml:"bind_ip" env-default:"127.0.0.1"`
-		Port     string `yaml:"port" env-default:"8080"`
+		HttpPort string `yaml:"http_port" env-default:"8080"`
+		GrpcPort string `yaml:"grpc_port" env-default:"8080"`
 		URI_List string `yaml:"URI_List" env-default:"/"`
 		URI_Once string `yaml:"URI_Once" env-default:"/"`
 		HOST     string `yaml:"HOST" env-default:"/"`
